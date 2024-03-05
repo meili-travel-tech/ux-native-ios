@@ -1,4 +1,4 @@
-MeiliSDK: A Powerful iOS Integration for Meili Platform Services
+MeiliSDK: A Powerful iOS Integration for Meili
 ----------------------------------------------------------------
 
 Meili iOS SDK empowers developers to seamlessly integrate the capabilities of Meili into their iOS applications. This robust solution streamlines the development process, offering various integration methods to cater to diverse preferences.
