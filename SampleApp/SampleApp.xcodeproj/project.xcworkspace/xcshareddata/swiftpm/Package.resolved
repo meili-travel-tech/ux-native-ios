@@ -1,0 +1,15 @@
+{
+  "originHash" : "c18c65a75499ad098396023287480242545f24587a649be24bb6d0cf52687cb2",
+  "pins" : [
+    {
+      "identity" : "ux-native-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/meili-travel-tech/ux-native-ios",
+      "state" : {
+        "revision" : "8d63492bb3631354a86dd1f910c2b0ea01e09f85",
+        "version" : "1.0.28"
+      }
+    }
+  ],
+  "version" : 3
+}

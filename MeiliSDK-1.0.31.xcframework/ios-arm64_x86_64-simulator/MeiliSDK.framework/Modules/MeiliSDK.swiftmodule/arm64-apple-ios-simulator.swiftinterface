@@ -1,0 +1,120 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MeiliSDK
+import CoreGraphics
+import CoreLocation
+import CoreText
+import DeveloperToolsSupport
+import Foundation
+import MapKit
+@_exported import MeiliSDK
+import PDFKit
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _MapKit_SwiftUI
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public struct AvailParams : Swift.Encodable {
+  public init(pickupLocation: Swift.String, dropoffLocation: Swift.String, pickupDateTime: Swift.String, dropoffDateTime: Swift.String, driverAge: Swift.Int, currencyCode: Swift.String, residency: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public enum MeiliEnvironment : Swift.String {
+  case prod
+  case preProd
+  case uat
+  case dev
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+
+
+
+public enum MeiliFlow {
+  case direct
+  case connect
+  public static func == (a: MeiliSDK.MeiliFlow, b: MeiliSDK.MeiliFlow) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct MeiliParams {
+  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil)
+}
+public struct MeiliView : SwiftUI.View {
+  public init(with meiliParams: MeiliSDK.MeiliParams)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s8MeiliSDK0A4ViewV4bodyQrvp", 0) __
+}
+
+
+
+
+
+
+
+
+
+extension MeiliSDK.MeiliEnvironment : Swift.Equatable {}
+extension MeiliSDK.MeiliEnvironment : Swift.Hashable {}
+extension MeiliSDK.MeiliEnvironment : Swift.RawRepresentable {}
+extension MeiliSDK.MeiliFlow : Swift.Equatable {}
+extension MeiliSDK.MeiliFlow : Swift.Hashable {}
