@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target          = '16.0'
   s.source = { :http => "https://github.com/meili-travel-tech/ux-native-ios/releases/download/#{s.version}/MeiliSDK-#{s.version}.xcframework.zip" }
 
-  s.ios.vendored_frameworks = "MeiliSDK.xcframework"
+  s.ios.vendored_frameworks = "MeiliSDK-#{s.version}.xcframework"
 end
