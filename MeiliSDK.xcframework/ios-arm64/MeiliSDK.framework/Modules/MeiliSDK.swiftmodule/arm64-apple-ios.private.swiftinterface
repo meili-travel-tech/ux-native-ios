@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MeiliSDK
+import Combine
 import CoreGraphics
 import CoreLocation
 import CoreText
@@ -63,6 +64,29 @@ public struct AvailParams : Swift.Encodable {
 
 
 
+public struct BookingInformation {
+  public let bookingID: Swift.String
+  public let bookingDate: Foundation.Date
+  public init(bookingID: Swift.String, bookingDate: Foundation.Date)
+}
+public class BookingViewModel : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($bookingInfo) public var bookingInfo: MeiliSDK.BookingInformation? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $bookingInfo: Combine.Published<MeiliSDK.BookingInformation?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init(bookingInfo: MeiliSDK.BookingInformation? = nil)
+  public func completeBooking(bookingInfo: MeiliSDK.BookingInformation)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
 
 
 
@@ -103,7 +127,7 @@ public struct MeiliParams {
   public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil)
 }
 public struct MeiliView : SwiftUI.View {
-  public init(with meiliParams: MeiliSDK.MeiliParams)
+  public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -118,6 +142,1452 @@ public struct MeiliView : SwiftUI.View {
 
 
 
+@available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
+extension Foundation.LocalizedStringResource {
+  public struct Localizable {
+    public var ariaLabelBreadcrumbProgressBar: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelCheckoutLoaded: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelCheckoutLoading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelChooseDropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelChoosePickup: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelConfirmationLoaded: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelConfirmationLoading: Foundation.LocalizedStringResource {
+      get
+    }
+    public func ariaLabelCountryFlag(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var ariaLabelDropOff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelOptionsLoaded: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelOptionsLoading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelPickUp: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelPriceSliderFrom: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelPriceSliderTo: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelRemoveTicketNumber: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelRemoveTicketNumber_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelResultsCarousel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func ariaLabelResultsCarouselSlide(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public var ariaLabelResultsLoaded: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelResultsLoading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelShowMoreAddOns: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelShowMoreFeatures: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelStartAgain: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelUpdateAddOns: Foundation.LocalizedStringResource {
+      get
+    }
+    public var backToHomeButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookedVendorLinksHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookingInProgress: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookingPriceA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalConfirmButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalConfirmButtonPending: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalErrorContinueButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalErrorMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalRebook: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalRebookLink: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalSecondaryButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalTextLineOne: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingModalTextLineTwo: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancelBookingSuccessPageHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageBackButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsAddressCityLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsAddressLine1Label: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsAddressPostCodeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsAddressStateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsEmailLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsFirstNameLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsLastNameLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsPhoneNumberLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverDetailsTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverFlightDetailsLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverFlightDetailsLabel_Renfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverFlightDetailsLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_partnerLoyaltyAccounts: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_supplierLoyaltyAccounts: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessagePartnerLoyaltyAccounts: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessageSupplierLoyaltyAccounts: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPostpay: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPostpayCCDETAILS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPostpayNONE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPostpayVOUCHER: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPrepay: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPrepayEVERVAULT: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPrepayINVOICE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageGoToConfirmationButtonPrepaySTRIPE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_AirBaltic: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_AirCaraibes: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_FrenchBee: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Journify: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_MAG: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_MalaysiaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Renfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_SAS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutPageLoyaltyProgramHeadingLoggedIn_SAS(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutPageLoyaltyProgramTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramTitle_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageNextStepText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageOptionalLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Accor: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_AirBaltic: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_AirCaraibes: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Journify: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_MalaysiaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Renfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_SAS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutPagePaymentFailed(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutPagePaymentTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSummaryBundleTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSummaryPostPayInfoTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSummaryPrePayInfoTitleINVOICE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel_Avis: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel_Europcar: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel_Hertz: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel_Sixt: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabelAvis: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabelEuropcar: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabelHertz: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabelSixt: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutPageTotalPriceLabelPostpay(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func checkoutPageTotalPriceLabelPrepay(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderCashLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutPointsSliderHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutPointsSliderPointsLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var chunkErrorBoundaryMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingLoyaltyWarning: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingLoyaltyWarningBoldPart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingLoyaltyWarningRegularPart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W001: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W002: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W003: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W004: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W005: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationGoBackToPartnerApp: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageBookingIDLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageLeadDriverTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPagePaidButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPagePendingTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPagePendingTitleSubText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageSaveConfirmation: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageTitle_Hertz: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationPageTitleOnRequestVehicle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func confirmationPageTitleSubText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var confirmationPageTitleSubTextNoEmail: Foundation.LocalizedStringResource {
+      get
+    }
+    public func confirmationPageTitleSubTextOnRequestVehicle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var connectHomeScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var counterMinusButtonAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var counterPlusButtonAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellAllResultsModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellBannerLocation(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func crossSellBannerPrice(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var crossSellEmergingLayerButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerButtonLabel_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerCarAltText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerHeading_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellEmergingLayerPriceDuration(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var crossSellEmergingLayerPriceFromLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerSubText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerSubText_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellEmergingLayerTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellMultiResultsHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellMultiResultsSwapButton(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var crossSellOptionsModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoButtonLabel_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoCarAltText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoHeading_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellPromoPriceDuration(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var crossSellPromoPriceFromLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoSubText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoSubText_Travelstart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellPromoTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellSearchModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellSelectedTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellWidgetFromPriceLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var crossSellWidgetSeeMoreButtonNext: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellWidgetSeeMoreButtonNoTotal: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellWidgetSeeMoreButtonPrevious: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellWidgetSeeMoreDescription: Foundation.LocalizedStringResource {
+      get
+    }
+    public func crossSellWidgetSelectedPriceLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var crossSellWidgetSelectedRemoveButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var currencySelectorLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var driverAgeFieldA11yHint: Foundation.LocalizedStringResource {
+      get
+    }
+    public var driverAgeFieldA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var driverDetailsLabelEmail: Foundation.LocalizedStringResource {
+      get
+    }
+    public var driverDetailsLabelName: Foundation.LocalizedStringResource {
+      get
+    }
+    public var dropdownClearARIALabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var dropdownToggleARIALabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func durationPriceA11yLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var errorAPICancelFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPIConfigFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPICurrencyOptionsFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPILocationsFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPIOptionsFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPIPreReservationFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPIReservationFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPIRetrieveFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorAPISearchFailed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorBoundaryMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorBoundaryMessageLink: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorMessageHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorMessageInvalidDataParams: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorPageBackButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorPageText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var errorPageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultCardNumberLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultExpirationDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultInvalidCardNumberLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultInvalidExpirationDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultInvalidSecurityCodeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var evervaultSecurityCodeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func finalPriceA11yLabel(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public var flightTicketNumberInfo: Foundation.LocalizedStringResource {
+      get
+    }
+    public var flightTicketNumberInfo_Renfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var flightTicketNumberInfo_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var homePageBanner: Foundation.LocalizedStringResource {
+      get
+    }
+    public var homePageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var homeScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var importantInfoModalButtonA11yHint: Foundation.LocalizedStringResource {
+      get
+    }
+    public var keys: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loaderErrorA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loaderLoadingA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var localeKeys: Foundation.LocalizedStringResource {
+      get
+    }
+    public var locationDropDownSubheadingAirport: Foundation.LocalizedStringResource {
+      get
+    }
+    public var locationDropDownSubheadingCity: Foundation.LocalizedStringResource {
+      get
+    }
+    public var locationDropDownSubheadingDistrict: Foundation.LocalizedStringResource {
+      get
+    }
+    public var locationDropDownSubheadingRailway: Foundation.LocalizedStringResource {
+      get
+    }
+    public var locationDropDownSubheadingRegion: Foundation.LocalizedStringResource {
+      get
+    }
+    public func locationItemResultA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_AirCaraibes(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Ethiopian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_LATAM_miles(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_LATAM_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Lufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_SAS(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsAirCaraibes(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsLufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var manageMyBookingPageCancelButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var manageMyBookingPageHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public var manageMyBookingPageHeaderCancelled: Foundation.LocalizedStringResource {
+      get
+    }
+    public var mileagePlanOptionPriceA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var mileagePlansModalText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var mileagePlansModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var notFoundPageBackButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var notFoundPageText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var notFoundPageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsBundleIncludedLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsBundleMoreOptionsText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsBundleTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasButtonAdd: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasButtonCancel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasMaxLimitMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasShowMoreButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasSubTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsMileageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageBackButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageBackToRentalAndProtectionButtonText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageBackToRentalButtonText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageContinueButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageContinueToCheckoutButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageContinueToExtrasButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageContinueToProtectionAndExtrasButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageNextStepText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageNextStepToExtrasText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageNextStepToProtectionAndExtrasText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPagePayLaterButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPagePayLaterButtonSubLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPagePayNowButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPagePayNowButtonSubLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageTitleExtrasExpanded: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPageTitleProtectionAndExtras: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func percentDiscountLabel(_ arg1: Swift.String, _ arg2: Swift.UInt) -> Foundation.LocalizedStringResource
+    public var percentDiscountOfferIconAlt: Foundation.LocalizedStringResource {
+      get
+    }
+    public func pickerDateButtonA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func pickerTimeButtonA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func pickerTimeButtonA11yLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func pickupInfoLabelRailwayStation(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func priceWithoutDiscountA11yLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var radioButtonA11yHint: Foundation.LocalizedStringResource {
+      get
+    }
+    public var radioButtonSelectedA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var radioButtonUnselectedA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var rentalScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resetAppButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultMapDepotsNavToDropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultMapDepotsSearchForCars: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultMapDepotsShowAllCars(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var resultMapFromPriceLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyAllFilteredClearFiltersButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyAllFilteredMessageSubTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyAllFilteredMessageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsEmptyAllFilteredPageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsEmptyMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyMessageSubText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyMessageSubTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsEmptyMessageText: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsEmptyMessageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsFilterFeaturesTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterFuelPolicyTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterFuelTypeTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterMileageTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterPriceRangeTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterResetButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterSeatsTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterSkipLink: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterTransmissionTypeTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterVehicleCategoryTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterVehicleGroupTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterVendorNameTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsFromPriceLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var resultsGeneralMessageBookNow: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsGeneralMessageDemandHigh: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsMapBackToButton_dropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsMapBackToButton_pickup: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsMapBackToPickupButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsMapDepotResultsBackButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsMapDepotsHeading(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func resultsMapDepotsHeading_dropoff(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func resultsMapDepotsHeading_pickup(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsMapScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsPageHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsPageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSelectVehicleButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsShowFiltersButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsShowResultsButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSortByPRICE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSortByRECOMMENDED: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsToastWarningVehicleUnavailable: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsTotalNumberOfFilteredResults(_ arg1: Swift.Int, _ arg2: Swift.Int) -> Foundation.LocalizedStringResource
+    public func resultsTotalNumberOfResults(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var retrieveBookingGivenNameInputLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingGivenNameInputPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingLastNameInputLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingLastNameInputPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberError: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberError_SAS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberErrorSAS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberInputLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberInputPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingPageHeader: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingSubmitButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func searchBarAgeErrorMax(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func searchBarAgeErrorMin(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var searchBarDifferentLocationLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func searchBarDriversAgeCheckboxLabel(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public var searchBarDriversAgeInputLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarDropOffDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarDropOffLocationLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarDropOffTimeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarEditButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarEditLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarFormAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarLocationMinimumLettersNeededLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarLocationNoResultsLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarLocationNoResultsSubLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarLocationSearchingLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarPickUpAndDropOffLocationLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarPickUpDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarPickUpDropOffLocationPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarPickUpLocationLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarPickUpTimeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarResidencyLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarResidencyPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarSearchButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButton_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButtonTrenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedText_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedTextTrenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberConfirmButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabelTrenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitle_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitleTrenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholder_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholderTrenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberRemoveButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberRemoveButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchLocationListInitialMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchSummaryDriversAgeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchSummaryDropOffDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchSummaryPickUpDateLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var selectionDepotWindowHeadingDropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var selectionDepotWindowHeadingPickup: Foundation.LocalizedStringResource {
+      get
+    }
+    public var selectionDepotWindowHeadingPickupAndDropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var showFiltersModalSubheading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var showFiltersModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var showMapButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var showMapModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureLinkText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureModalDescription: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureModalLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureSubSectionModalDescription: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureSubSectionModalLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortDisclosureText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var sortSelectorLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func spinButtonCurrentValueLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var spinButtonDecreaseButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var spinButtonIncreaseButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var spinButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryPickUpDropOffHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryPostPayInfoContent: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryPostPayInfoLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryPrePayInfoContentINVOICE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryPrePayInfoLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel_Renfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelLufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelRenfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public func summaryTotalExchangeRateDisclaimerPostpay(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryTotalExchangeRateDisclaimerPrepay(_ arg1: Swift.String, _ arg2: Swift.String, _ arg3: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryTotalFromPriceLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var summaryTotalHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalIncludedLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public func summaryTotalIncludedSublineItemLabel(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryTotalLineItemLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var summaryTotalPartialPaymentMethodLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPaymentMethodLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPrePaymentMethodLabelINVOICE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPriceAddOnsDisclaimer: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPriceFeeDisclaimer: Foundation.LocalizedStringResource {
+      get
+    }
+    public func summaryTotalSublineItemLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var summaryTotalTotalLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsFailedMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public func termsAndConditionsLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var termsAndConditionsLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksHashtagSeparatedText1: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksHashtagSeparatedText2: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksHashtagSeparatedText3: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksIntroText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksMeiliPrivacyPolicyLink: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksMeiliTermsAndConditionsLink: Foundation.LocalizedStringResource {
+      get
+    }
+    public func termsAndConditionsLinksNoPrivacyLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var termsAndConditionsLinksNoPrivacyLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksNoPrivacyLinksHashtagSeparatedText1: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksTermsAndConditionsModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func termsAndConditionsLinksVendorPrivacyPolicyLink(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsLinksVendorTermsAndConditions(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsLinksVendorTermsAndConditionsLink(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsLinksWithMarketingTerms(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public var termsAndConditionsLinkTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalImportantInfoSectionTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalSectionTitle_GENERAL: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalSectionTitle_PRIVACY: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalSectionTitle_SPECIFIC: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalTermsAndConditionsExternalLinkLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalTermsAndConditionsSectionTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public func termsAndConditionsPrivacyPolicyLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var termsAndConditionsPrivacyPolicyLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsPrivacyPolicyLinksHashtagSeparatedText1: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsPrivacyPolicyLinksHashtagSeparatedText2: Foundation.LocalizedStringResource {
+      get
+    }
+    public func textFieldLabelA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func textFieldLabelA11yLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func textFieldTextInputA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func textFieldTextInputA11yLabel(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func totalFilteredResults(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var updateAvailableBanner: Foundation.LocalizedStringResource {
+      get
+    }
+    public var updateAvailableBannerLinkText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var updateAvailableBannerPostText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var updateAvailableBannerPreText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationAddressLineRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationAZCharsOnly: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationCityTypeRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public func validationDropoffDateMinimumRentalDuration(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var validationDropoffDateMustBeAfterPickupDate: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationDropoffDateMustBeInLimits: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationEmailInvalid: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationEmailRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationFirstNameRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationLastNameRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationLocationRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationLoyaltyAccountNumber: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPhoneNumberInvalid: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPhoneNumberRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPickUpTimeAfterCurrentTime: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPolicyRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPostCodeRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationResidencyRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationRetrieveBookingNumberRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationRetrieveGivenNameRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationRetrieveLastNameRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationStateTypeRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationStringRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationTermsRequired: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationTicketNumberRegex: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleElectricHighlightText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleElectricHighlightTextShort: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleExactLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleOnRequestLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleOnRequestText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupCrossover: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupEstate: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupMotorBike: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupPeopleCarrier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupPickUpTruck: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupSpecial: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupSuv: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carGroupVan: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carLarge: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carLuxury: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carMedium: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSimilarLabel_carSmall: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSpecInitialsTransmissionAutomatic: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSpecInitialsTransmissionManual: Foundation.LocalizedStringResource {
+      get
+    }
+    public func vehicleSpecLabelBaggage(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelDoorCount(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var vehicleSpecLabelMileageOptions: Foundation.LocalizedStringResource {
+      get
+    }
+    public func vehicleSpecLabelPassenger(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public var vehicleSpecLabelTranmissionAutomatic: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vehicleSpecLabelTranmissionManual: Foundation.LocalizedStringResource {
+      get
+    }
+    public func vendorBookedApp(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var vendorBookedModify: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vendorBookedSupport: Foundation.LocalizedStringResource {
+      get
+    }
+    public var vendorHeadingSuppliedBy: Foundation.LocalizedStringResource {
+      get
+    }
+    public func vendorImageAltText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vendorSelectedMerchFeaturesModalTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vendorSelectedTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vendorTextSuppliedBy(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var yourRentalScreenContinueButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+  }
+  public static let localizable: Foundation.LocalizedStringResource.Localizable
+}
 extension MeiliSDK.MeiliEnvironment : Swift.Equatable {}
 extension MeiliSDK.MeiliEnvironment : Swift.Hashable {}
 extension MeiliSDK.MeiliEnvironment : Swift.RawRepresentable {}
