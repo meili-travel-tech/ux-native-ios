@@ -50,6 +50,8 @@ import os
 
 
 
+
+
 public struct AvailParams : Swift.Encodable {
   public init(pickupLocation: Swift.String, dropoffLocation: Swift.String, pickupDateTime: Swift.String, dropoffDateTime: Swift.String, driverAge: Swift.Int, currencyCode: Swift.String, residency: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
@@ -99,6 +101,7 @@ public class BookingViewModel : Combine.ObservableObject {
 
 
 
+
 public enum MeiliEnvironment : Swift.String {
   case prod
   case preProd
@@ -114,12 +117,14 @@ public enum MeiliEnvironment : Swift.String {
 
 
 
-public enum MeiliFlow {
+
+public enum MeiliFlow : Swift.String {
   case direct
   case connect
-  public static func == (a: MeiliSDK.MeiliFlow, b: MeiliSDK.MeiliFlow) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+  case bookingManager
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -133,6 +138,7 @@ public struct MeiliView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s8MeiliSDK0A4ViewV4bodyQrvp", 0) __
 }
+
 
 
 
@@ -1593,3 +1599,4 @@ extension MeiliSDK.MeiliEnvironment : Swift.Hashable {}
 extension MeiliSDK.MeiliEnvironment : Swift.RawRepresentable {}
 extension MeiliSDK.MeiliFlow : Swift.Equatable {}
 extension MeiliSDK.MeiliFlow : Swift.Hashable {}
+extension MeiliSDK.MeiliFlow : Swift.RawRepresentable {}
