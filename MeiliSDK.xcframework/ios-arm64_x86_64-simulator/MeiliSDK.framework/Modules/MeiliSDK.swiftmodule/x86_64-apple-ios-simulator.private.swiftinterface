@@ -129,14 +129,54 @@ public enum MeiliFlow : Swift.String {
   }
 }
 public struct MeiliParams {
-  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil)
+  public var ptid: Swift.String
+  public var currentFlow: MeiliSDK.MeiliFlow
+  public var env: MeiliSDK.MeiliEnvironment
+  public var availParams: MeiliSDK.AvailParams?
+  public var bookingParams: MeiliSDK.BookingParams?
+  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, bookingParams: MeiliSDK.BookingParams? = nil)
 }
 public struct MeiliView : SwiftUI.View {
+  public var meiliParams: MeiliSDK.MeiliParams
+  public var bookingViewModel: MeiliSDK.BookingViewModel?
   public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s8MeiliSDK0A4ViewV4bodyQrvp", 0) __
+}
+
+public struct BookingParams {
+  public var partnerLoyaltyAccount: Swift.String?
+  public var partnerLoyaltyAccountTier: Swift.String?
+  public var numberOfPassengers: Swift.Int?
+  public var customerPartnerCode: Swift.String?
+  public var flightNumber: Swift.String?
+  public var passengerNameRecord: Swift.String?
+  public var superPassengerNameRecord: Swift.String?
+  public var infant: Swift.Int?
+  public var child: Swift.Int?
+  public var teenager: Swift.Int?
+  public var supplierLoyaltyAccount: Swift.String?
+  public var fareTypeAndFlex: Swift.String?
+  public var departureAirport: Swift.String?
+  public var arrivalAirport: Swift.String?
+  public var ancillaryActivity: Swift.String?
+  public var airlineFareAmount: Swift.Double?
+  public var airlineFareCurrency: Swift.String?
+  public var partnerCustomerID: Swift.String?
+  public var firstName: Swift.String?
+  public var lastName: Swift.String
+  public var email: Swift.String?
+  public var phoneNumbers: [Swift.Int]?
+  public var companyName: Swift.String?
+  public var addressLine1: Swift.String?
+  public var postCode: Swift.String?
+  public var city: Swift.String?
+  public var state: Swift.String?
+  public var confirmationId: Swift.String
+  public var prefillOnly: Swift.Bool?
+  public init(partnerLoyaltyAccount: Swift.String? = nil, partnerLoyaltyAccountTier: Swift.String? = nil, numberOfPassengers: Swift.Int? = nil, customerPartnerCode: Swift.String? = nil, flightNumber: Swift.String? = nil, passengerNameRecord: Swift.String? = nil, superPassengerNameRecord: Swift.String? = nil, infant: Swift.Int? = nil, child: Swift.Int? = nil, teenager: Swift.Int? = nil, supplierLoyaltyAccount: Swift.String? = nil, fareTypeAndFlex: Swift.String? = nil, departureAirport: Swift.String? = nil, arrivalAirport: Swift.String? = nil, ancillaryActivity: Swift.String? = nil, airlineFareAmount: Swift.Double? = nil, airlineFareCurrency: Swift.String? = nil, partnerCustomerID: Swift.String? = nil, firstName: Swift.String? = nil, lastName: Swift.String = "", email: Swift.String? = nil, phoneNumbers: [Swift.Int]? = nil, companyName: Swift.String? = nil, addressLine1: Swift.String? = nil, postCode: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, confirmationId: Swift.String = "", prefillOnly: Swift.Bool? = nil)
 }
 
 
