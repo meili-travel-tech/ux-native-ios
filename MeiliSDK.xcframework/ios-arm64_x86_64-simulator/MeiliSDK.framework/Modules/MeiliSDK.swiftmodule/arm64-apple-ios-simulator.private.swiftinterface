@@ -134,7 +134,8 @@ public struct MeiliParams {
   public var env: MeiliSDK.MeiliEnvironment
   public var availParams: MeiliSDK.AvailParams?
   public var bookingParams: MeiliSDK.BookingParams?
-  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, bookingParams: MeiliSDK.BookingParams? = nil)
+  public var dismissAction: (() -> Swift.Void)?
+  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, bookingParams: MeiliSDK.BookingParams? = nil, dismissAction: (() -> Swift.Void)? = nil)
 }
 public struct MeiliView : SwiftUI.View {
   public var meiliParams: MeiliSDK.MeiliParams
