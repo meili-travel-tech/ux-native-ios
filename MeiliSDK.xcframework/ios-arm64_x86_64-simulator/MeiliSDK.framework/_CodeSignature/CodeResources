@@ -34,43 +34,43 @@
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		a2VAZEaBqNpi4XigVO4m4QDJhEQ=
+		El9FYUbZlX6v9IEIDCm9C6VlCcM=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Yr9dNf87OOKKCpfKToxYIDBVZrk=
+		duc1wpdB4zytRGRvcqY4gp7KX1g=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		hfYQg8JUwIyMnxr3RRSSMBZ9Xro=
+		dHPrJzfTgezJFl1Xl9iiwfpsd7Y=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Yr9dNf87OOKKCpfKToxYIDBVZrk=
+		duc1wpdB4zytRGRvcqY4gp7KX1g=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		iNTLAj99UpCJdCBD5y3+oK662ro=
+		2fQ0DF6izh8TYRd6MFoF8qHk9Mw=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		a2VAZEaBqNpi4XigVO4m4QDJhEQ=
+		El9FYUbZlX6v9IEIDCm9C6VlCcM=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		6jgplGqK26ylNCe8Ux7eRHxcaVw=
+		QR9N30psCKN19t9ZiaBAV5mukJM=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		A7+1k4IozkrSWgH/TfhvtwMpLZc=
+		oCZ+dLVAd20BIKSX8tJpI5St69E=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		6jgplGqK26ylNCe8Ux7eRHxcaVw=
+		QR9N30psCKN19t9ZiaBAV5mukJM=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Z1Gw7FnjeWmzdy/seNCfStDdkxc=
+		e+aVsGQeTjaW836jD7oRce9yxaw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -575,70 +575,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kPYOSFj7Wjnhw4KK0IdKYCQ2vfaPCt+3wr8/CR1kI+U=
+			h6BMNSlJlcD1XHLTaQMqjJPK6Wt1SnsFn5HprmhPrto=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y3EyZ3JgrD8XvauKalgFVkImMzlV9tNhb5rKfjJ7UUo=
+			2a9lksNGrb7K7ljNtGnJfshZz/m1rfrJYHh3zXEOhAc=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JNrveQMu+R1nGtDwNls3fMD3ciB67qTIoQN2YJUZyDU=
+			9+P/Ui8ZHMYXZj37J3bepcvavlHYG0zagU/AYo+xaNk=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y3EyZ3JgrD8XvauKalgFVkImMzlV9tNhb5rKfjJ7UUo=
+			2a9lksNGrb7K7ljNtGnJfshZz/m1rfrJYHh3zXEOhAc=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eFjD8m8P97hAi4ZaoTIKjSrgMr4+xyvcMFqdTHlOCF4=
+			4WsaADKHSiiQJEgAltCi76wXNoOX1pTYWcNKDbV4m4g=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kPYOSFj7Wjnhw4KK0IdKYCQ2vfaPCt+3wr8/CR1kI+U=
+			h6BMNSlJlcD1XHLTaQMqjJPK6Wt1SnsFn5HprmhPrto=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xVasfP/SdAY7CY4xuRdDMQAV6kaIOhp/C56fX7Bzj3U=
+			N20jVeLqCqGW4nKjFPOwYXqb0coW7Z7Uvgu/4mJa7NQ=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			npvQBclDpnkDRVZWdJJJCWtxnnm9j+Z5dbl1O9c69gM=
+			+yjJDTPVInzFLRuwPRx57HwPSyrqz91Vay1RgGjdxPc=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xVasfP/SdAY7CY4xuRdDMQAV6kaIOhp/C56fX7Bzj3U=
+			N20jVeLqCqGW4nKjFPOwYXqb0coW7Z7Uvgu/4mJa7NQ=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iFmXg24GJ8H/ZLxKNnJ/mxiPen6vGN6XHt6lpRT4M2w=
+			2q0V3F0jZU2YnwXIcv2uVz77lM3sbzx+Ij0eS6DUtKA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

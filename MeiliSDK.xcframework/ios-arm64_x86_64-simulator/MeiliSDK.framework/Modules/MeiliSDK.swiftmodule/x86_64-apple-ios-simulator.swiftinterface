@@ -12,6 +12,7 @@ import MapKit
 import PDFKit
 import Swift
 import SwiftUI
+import SwiftUIPager
 import UIKit
 import WebKit
 import _Concurrency
@@ -20,6 +21,7 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.log
 import os
+
 
 
 
@@ -102,6 +104,7 @@ public class BookingViewModel : Combine.ObservableObject {
 
 
 
+
 public enum MeiliEnvironment : Swift.String {
   case prod
   case preProd
@@ -137,10 +140,10 @@ public struct MeiliParams {
   public var dismissAction: (() -> Swift.Void)?
   public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, bookingParams: MeiliSDK.BookingParams? = nil, dismissAction: (() -> Swift.Void)? = nil)
 }
-public struct MeiliView : SwiftUI.View {
-  public var meiliParams: MeiliSDK.MeiliParams
-  public var bookingViewModel: MeiliSDK.BookingViewModel?
-  public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
+@_Concurrency.MainActor(unsafe) public struct MeiliView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var meiliParams: MeiliSDK.MeiliParams
+  @_Concurrency.MainActor(unsafe) public var bookingViewModel: MeiliSDK.BookingViewModel?
+  @_Concurrency.MainActor(unsafe) public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
