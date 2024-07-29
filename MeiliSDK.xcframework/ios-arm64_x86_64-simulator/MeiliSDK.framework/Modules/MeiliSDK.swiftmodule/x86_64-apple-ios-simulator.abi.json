@@ -1838,7 +1838,10 @@
         "name": "SwiftUIPager",
         "printedName": "SwiftUIPager",
         "declKind": "Import",
-        "moduleName": "MeiliSDK"
+        "moduleName": "MeiliSDK",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
       },
       {
         "kind": "Import",
@@ -32145,14 +32148,14 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/InPathScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 574,
+      "offset": 595,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/InPathScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 617,
+      "offset": 638,
       "length": 5,
       "value": "false"
     },

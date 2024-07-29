@@ -18,7 +18,7 @@ let package = Package(
         .binaryTarget(
                       name: "MeiliSDK", 
                       url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.0.48/MeiliSDK.xcframework.zip",
-                      checksum: "fdf3b05cb0b2558a71883b02b9b605cad50168f5372e78e1a7f4b17197731cbd"
+                      checksum: "96f071e9a79189cb048af3ecb0d9df307d16f3e80e6a9e73c80ec4019ba38401"
                      )
     ]
 )

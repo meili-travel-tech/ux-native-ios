@@ -12,7 +12,6 @@ import MapKit
 import PDFKit
 import Swift
 import SwiftUI
-import SwiftUIPager
 import UIKit
 import WebKit
 import _Concurrency
