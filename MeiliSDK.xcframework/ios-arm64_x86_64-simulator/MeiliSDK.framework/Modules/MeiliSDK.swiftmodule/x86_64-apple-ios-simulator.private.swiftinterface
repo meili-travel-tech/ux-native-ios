@@ -54,7 +54,7 @@ import os
 
 
 public struct AvailParams : Swift.Encodable {
-  public init(pickupLocation: Swift.String, dropoffLocation: Swift.String, pickupDateTime: Swift.String, dropoffDateTime: Swift.String, driverAge: Swift.Int, currencyCode: Swift.String, residency: Swift.String)
+  public init(pickupLocation: Swift.String? = nil, dropoffLocation: Swift.String? = nil, pickupDateTime: Swift.String? = nil, dropoffDateTime: Swift.String? = nil, driverAge: Swift.Int? = nil, currencyCode: Swift.String? = nil, residency: Swift.String? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
 }
 
