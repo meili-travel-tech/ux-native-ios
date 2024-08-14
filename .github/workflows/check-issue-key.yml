@@ -1,0 +1,24 @@
+name: Check commit for Jira issue key
+
+on:
+  push:
+    branches:
+      - '**' # This checks all branches
+
+jobs:
+  check-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check commit messages for Jira issue keys
+        run: |
+          JIRA_KEY_PATTERN="([A-Z]{2,}-[0-9]+)"
+          # List all commits that are part of this push
+          for COMMIT in $(git rev-list --no-merges --format=%s $(git rev-parse HEAD^)..$(git rev-parse HEAD) | grep -v commit); do
+            if ! echo "$COMMIT" | grep -qE "$JIRA_KEY_PATTERN"; then
+              echo "Commit message '$COMMIT' does not contain a Jira issue key."
+              exit 1
+            fi
+          done
