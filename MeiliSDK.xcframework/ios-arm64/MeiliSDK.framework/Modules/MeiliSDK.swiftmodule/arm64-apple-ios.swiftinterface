@@ -52,9 +52,20 @@ import os
 
 
 
+public protocol MeiliAnalyticsProvider {
+  func trackEvent(name: Swift.String, properties: [Swift.String : Any]?)
+  func trackScreen(name: Swift.String, properties: [Swift.String : Any]?)
+  func setUserProperties(_ properties: [Swift.String : Any])
+  func setUserId(_ userId: Swift.String)
+}
+extension MeiliSDK.MeiliAnalyticsProvider {
+  public func trackScreen(name: Swift.String, properties: [Swift.String : Any]?)
+  public func setUserProperties(_ properties: [Swift.String : Any])
+  public func setUserId(_ userId: Swift.String)
+}
 
 public struct AvailParams : Swift.Encodable {
-  public init(pickupLocation: Swift.String? = nil, dropoffLocation: Swift.String? = nil, pickupDateTime: Swift.String? = nil, dropoffDateTime: Swift.String? = nil, driverAge: Swift.Int? = nil, currencyCode: Swift.String? = nil, residency: Swift.String? = nil)
+  public init(pickupLocation: Swift.String? = nil, dropoffLocation: Swift.String? = nil, pickupDate: Swift.String? = nil, pickupTime: Swift.String? = nil, dropoffDate: Swift.String? = nil, dropoffTime: Swift.String? = nil, driverAge: Swift.Int? = nil, currencyCode: Swift.String? = nil, residency: Swift.String? = nil, pickupDateTime: Swift.String? = nil, dropoffDateTime: Swift.String? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
 }
 
@@ -132,12 +143,12 @@ public enum MeiliFlow : Swift.String {
 }
 public struct MeiliParams {
   public var ptid: Swift.String
-  public var currentFlow: MeiliSDK.MeiliFlow
+  public var flow: MeiliSDK.MeiliFlow
   public var env: MeiliSDK.MeiliEnvironment
   public var availParams: MeiliSDK.AvailParams?
-  public var bookingParams: MeiliSDK.BookingParams?
+  public var additionalParams: MeiliSDK.AdditionalParams?
   public var dismissAction: (() -> Swift.Void)?
-  public init(ptid: Swift.String, currentFlow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, bookingParams: MeiliSDK.BookingParams? = nil, dismissAction: (() -> Swift.Void)? = nil)
+  public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil)
 }
 @_Concurrency.MainActor(unsafe) public struct MeiliView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public var meiliParams: MeiliSDK.MeiliParams
@@ -149,7 +160,7 @@ public struct MeiliParams {
   public typealias Body = @_opaqueReturnTypeOf("$s8MeiliSDK0A4ViewV4bodyQrvp", 0) __
 }
 
-public struct BookingParams {
+public struct AdditionalParams {
   public var partnerLoyaltyAccount: Swift.String?
   public var partnerLoyaltyAccountTier: Swift.String?
   public var numberOfPassengers: Swift.Int?
@@ -187,6 +198,14 @@ public struct BookingParams {
 
 
 
+@_hasMissingDesignatedInitializers public class MeiliAnalytics {
+  public static let shared: MeiliSDK.MeiliAnalytics
+  public func addProvider(_ provider: any MeiliSDK.MeiliAnalyticsProvider)
+  public func setUserInfo(userId: Swift.String?, properties: [Swift.String : Any]?)
+  public func setUserId(_ userId: Swift.String)
+  public func updateUserProperties(_ properties: [Swift.String : Any])
+  @objc deinit
+}
 
 
 
