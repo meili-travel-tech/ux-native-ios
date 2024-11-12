@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MeiliSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Combine
 import CoreGraphics
 import CoreLocation
@@ -20,7 +21,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.log
 import os
-
 
 
 
@@ -115,6 +115,7 @@ public class BookingViewModel : Combine.ObservableObject {
 
 
 
+
 public enum MeiliEnvironment : Swift.String {
   case prod
   case preProd
@@ -148,14 +149,14 @@ public struct MeiliParams {
   public var availParams: MeiliSDK.AvailParams?
   public var additionalParams: MeiliSDK.AdditionalParams?
   public var dismissAction: (() -> Swift.Void)?
-  public var colorScheme: SwiftUI.ColorScheme?
-  public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil, colorScheme: SwiftUI.ColorScheme? = nil)
+  public var colorScheme: SwiftUICore.ColorScheme?
+  public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil, colorScheme: SwiftUICore.ColorScheme? = nil)
 }
-@_Concurrency.MainActor(unsafe) public struct MeiliView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public var meiliParams: MeiliSDK.MeiliParams
-  @_Concurrency.MainActor(unsafe) public var bookingViewModel: MeiliSDK.BookingViewModel?
-  @_Concurrency.MainActor(unsafe) public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct MeiliView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var meiliParams: MeiliSDK.MeiliParams
+  @_Concurrency.MainActor @preconcurrency public var bookingViewModel: MeiliSDK.BookingViewModel?
+  @_Concurrency.MainActor @preconcurrency public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s8MeiliSDK0A4ViewV4bodyQrvp", 0) __
@@ -172,7 +173,7 @@ public struct AdditionalParams {
   public var infant: Swift.Int?
   public var child: Swift.Int?
   public var teenager: Swift.Int?
-  public var supplierLoyaltyAccount: Swift.String?
+  public var supplierLoyaltyAccounts: [Swift.String]?
   public var fareTypeAndFlex: Swift.String?
   public var departureAirport: Swift.String?
   public var arrivalAirport: Swift.String?
@@ -185,6 +186,7 @@ public struct AdditionalParams {
   public var email: Swift.String?
   public var phoneNumbers: [Swift.Int]?
   public var companyName: Swift.String?
+  public var corporateCode: Swift.String?
   public var addressLine1: Swift.String?
   public var postCode: Swift.String?
   public var city: Swift.String?
@@ -192,7 +194,7 @@ public struct AdditionalParams {
   public var confirmationId: Swift.String
   public var prefillOnly: Swift.Bool?
   public var givenName: Swift.String?
-  public init(partnerLoyaltyAccount: Swift.String? = nil, partnerLoyaltyAccountTier: Swift.String? = nil, numberOfPassengers: Swift.Int? = nil, customerPartnerCode: Swift.String? = nil, flightNumber: Swift.String? = nil, passengerNameRecord: Swift.String? = nil, superPassengerNameRecord: Swift.String? = nil, infant: Swift.Int? = nil, child: Swift.Int? = nil, teenager: Swift.Int? = nil, supplierLoyaltyAccount: Swift.String? = nil, fareTypeAndFlex: Swift.String? = nil, departureAirport: Swift.String? = nil, arrivalAirport: Swift.String? = nil, ancillaryActivity: Swift.String? = nil, airlineFareAmount: Swift.Double? = nil, airlineFareCurrency: Swift.String? = nil, partnerCustomerID: Swift.String? = nil, firstName: Swift.String? = nil, lastName: Swift.String = "", email: Swift.String? = nil, phoneNumbers: [Swift.Int]? = nil, companyName: Swift.String? = nil, addressLine1: Swift.String? = nil, postCode: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, confirmationId: Swift.String = "", prefillOnly: Swift.Bool? = nil, givenName: Swift.String? = nil)
+  public init(partnerLoyaltyAccount: Swift.String? = nil, partnerLoyaltyAccountTier: Swift.String? = nil, numberOfPassengers: Swift.Int? = nil, customerPartnerCode: Swift.String? = nil, flightNumber: Swift.String? = nil, passengerNameRecord: Swift.String? = nil, superPassengerNameRecord: Swift.String? = nil, infant: Swift.Int? = nil, child: Swift.Int? = nil, teenager: Swift.Int? = nil, supplierLoyaltyAccounts: [Swift.String]? = nil, fareTypeAndFlex: Swift.String? = nil, departureAirport: Swift.String? = nil, arrivalAirport: Swift.String? = nil, ancillaryActivity: Swift.String? = nil, airlineFareAmount: Swift.Double? = nil, airlineFareCurrency: Swift.String? = nil, partnerCustomerID: Swift.String? = nil, firstName: Swift.String? = nil, lastName: Swift.String = "", email: Swift.String? = nil, phoneNumbers: [Swift.Int]? = nil, companyName: Swift.String? = nil, corporateCode: Swift.String? = nil, addressLine1: Swift.String? = nil, postCode: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, confirmationId: Swift.String = "", prefillOnly: Swift.Bool? = nil, givenName: Swift.String? = nil)
 }
 
 
@@ -1664,3 +1666,4 @@ extension MeiliSDK.MeiliEnvironment : Swift.RawRepresentable {}
 extension MeiliSDK.MeiliFlow : Swift.Equatable {}
 extension MeiliSDK.MeiliFlow : Swift.Hashable {}
 extension MeiliSDK.MeiliFlow : Swift.RawRepresentable {}
+extension MeiliSDK.MeiliView : Swift.Sendable {}
