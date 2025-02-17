@@ -2352,6 +2352,16 @@
       },
       {
         "kind": "Import",
+        "name": "PhoneNumberKit",
+        "printedName": "PhoneNumberKit",
+        "declKind": "Import",
+        "moduleName": "MeiliSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Shimmer",
         "printedName": "Shimmer",
         "declKind": "Import",
@@ -36658,91 +36668,91 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 471,
+      "offset": 489,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 502,
+      "offset": 520,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 530,
+      "offset": 548,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 564,
+      "offset": 582,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 635,
+      "offset": 653,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 665,
+      "offset": 683,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 701,
+      "offset": 749,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 729,
+      "offset": 777,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 758,
+      "offset": 806,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 790,
+      "offset": 838,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 826,
+      "offset": 874,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "StringLiteral",
-      "offset": 4829,
+      "offset": 4984,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliCore\/Models\/DriverDetailsModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 4857,
+      "offset": 5012,
       "length": 5,
       "value": "false"
     },
@@ -38765,13 +38775,6 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 230,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
-      "kind": "BooleanLiteral",
       "offset": 262,
       "length": 5,
       "value": "false"
@@ -38779,44 +38782,79 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 309,
+      "offset": 294,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 356,
+      "offset": 341,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 397,
+      "offset": 388,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
+      "kind": "BooleanLiteral",
+      "offset": 429,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 504,
+      "offset": 536,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 456,
+      "offset": 488,
       "length": 17,
       "value": "\"brandFontFamily\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "Array",
-      "offset": 979,
+      "offset": 1011,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
+      "kind": "StringLiteral",
+      "offset": 16419,
+      "length": 6,
+      "value": "\"John\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
+      "kind": "StringLiteral",
+      "offset": 16437,
+      "length": 11,
+      "value": "\"Appleseed\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
+      "kind": "StringLiteral",
+      "offset": 16457,
+      "length": 28,
+      "value": "\"john.appleseed@example.com\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
+      "kind": "StringLiteral",
+      "offset": 16500,
+      "length": 12,
+      "value": "\"7411011011\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/TicketOrLoyaltyNumberView.swift",
@@ -39227,14 +39265,14 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/SearchPanelView.swift",
       "kind": "FloatLiteral",
-      "offset": 380,
+      "offset": 463,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/SearchPanelView.swift",
       "kind": "StringLiteral",
-      "offset": 13593,
+      "offset": 13848,
       "length": 9,
       "value": "\"Ireland\""
     },
@@ -40165,7 +40203,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliView.swift",
       "kind": "StringLiteral",
-      "offset": 6629,
+      "offset": 6799,
       "length": 8,
       "value": "\"100.10\""
     },

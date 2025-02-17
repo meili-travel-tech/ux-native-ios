@@ -121,6 +121,7 @@ public class BookingViewModel : Combine.ObservableObject {
 
 
 
+
 public enum MeiliEnvironment : Swift.String {
   case prod
   case preProd

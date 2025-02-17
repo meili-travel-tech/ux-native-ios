@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		i5z7SFZwUgG9XiWrQiMwZ4bYNU4=
+		i1OEqX6J9YTB7HZzlfCEEsvkSvw=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		t+L3feO7yDzHDuJNOOtnwAR7QlY=
+		snPAINAHW2vyrcQf538kge1XrxY=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,19 +46,19 @@
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		t+L3feO7yDzHDuJNOOtnwAR7QlY=
+		snPAINAHW2vyrcQf538kge1XrxY=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RlmAl7SFvH3+EVNkXMgaowXWi5w=
+		FndVcRpGJGqEtaZYW9ReD6r/BoY=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		i5z7SFZwUgG9XiWrQiMwZ4bYNU4=
+		i1OEqX6J9YTB7HZzlfCEEsvkSvw=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		YOZpoRfxoNZkaV7JuboFZJeRoMQ=
+		sSN+o8VisSzKSZYPzmbVZOPursc=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		YOZpoRfxoNZkaV7JuboFZJeRoMQ=
+		sSN+o8VisSzKSZYPzmbVZOPursc=
 		</data>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mJ2/MATYZIxTXui9XauefEg1Vys=
+		/fHMkxZqepXBk0QZLmwmMlXqa8I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -575,14 +575,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8N+SvUdlKnBeIoBH1N/AyveKTxJvFU0WqqeyPk/fZ+A=
+			icCXlmD9CRLpcyFwOiFOfT0yUZ+2pDBR918r3G80iJY=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fccJVwkXD5znexZ1Z5ViZFJKW8NDAI/I1HgUzqnAq0A=
+			B0mcoUOUy5WqJP3awqdaefK9u7D81aPcFbKKS/Xceso=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -596,28 +596,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fccJVwkXD5znexZ1Z5ViZFJKW8NDAI/I1HgUzqnAq0A=
+			B0mcoUOUy5WqJP3awqdaefK9u7D81aPcFbKKS/Xceso=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RBgF5TnwU7uNfXBau6E+OQPm7OOw/4w7s/Y7oKlEgfU=
+			R/+O4ttR7InhH+ai1jaEeGBU5DkD0hSqxjdVMJJ4P1k=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8N+SvUdlKnBeIoBH1N/AyveKTxJvFU0WqqeyPk/fZ+A=
+			icCXlmD9CRLpcyFwOiFOfT0yUZ+2pDBR918r3G80iJY=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w72YzQIJhoEsC0yckmZNDvjIPGpsSyJjPL6PnwYqrC0=
+			oeKpHX7lv+QYaySPqFXPht4k3ncy0VGqeMvK9+/tp0w=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -631,14 +631,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w72YzQIJhoEsC0yckmZNDvjIPGpsSyJjPL6PnwYqrC0=
+			oeKpHX7lv+QYaySPqFXPht4k3ncy0VGqeMvK9+/tp0w=
 			</data>
 		</dict>
 		<key>Modules/MeiliSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nD3iFvQq79zsuATELCMV/kJBWBtM6XHXXTTa51UTo/Y=
+			BtuYeYJuqZtb9Kn/1OCpdRoGsNMrAJWjlhRIMh8fCaE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
