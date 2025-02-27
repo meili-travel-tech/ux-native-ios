@@ -460,6 +460,9 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageLoyaltyProgramHeading_AirCaraibes: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageLoyaltyProgramHeading_AlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageLoyaltyProgramHeading_FrenchBee: Foundation.LocalizedStringResource {
       get
     }
@@ -549,6 +552,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_RACQ: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_RACT: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_RACWA: Foundation.LocalizedStringResource {
@@ -734,6 +740,9 @@ extension Foundation.LocalizedStringResource {
     }
     public func crossSellBannerLocation(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func crossSellBannerPrice(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var crossSellConfirmationTitle: Foundation.LocalizedStringResource {
+      get
+    }
     public var crossSellEmergingLayerButtonLabel: Foundation.LocalizedStringResource {
       get
     }
@@ -986,6 +995,7 @@ extension Foundation.LocalizedStringResource {
     }
     public func locationItemResultA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_AlaskaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_AmericanAirlines_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_DeltaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
@@ -1013,6 +1023,7 @@ extension Foundation.LocalizedStringResource {
     public func loyaltyEarnPoints_AirCaraibes(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Ethiopian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_HReward(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_ItaloTreno(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_LATAM_miles(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_LATAM_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
@@ -1255,6 +1266,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var resultsFilterPaymentMethodTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterPointsRangeTitle: Foundation.LocalizedStringResource {
       get
     }
     public var resultsFilterPriceRangeTitle: Foundation.LocalizedStringResource {
@@ -1665,6 +1679,9 @@ extension Foundation.LocalizedStringResource {
     public var summaryTotalPriceAddOnsDisclaimer: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalPriceAddOnsDisclaimer_Localiza: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalPriceAddOnsDisclaimer_Movida: Foundation.LocalizedStringResource {
       get
     }
@@ -1687,6 +1704,7 @@ extension Foundation.LocalizedStringResource {
     }
     public func termsAndConditionsLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsLinks_AANT(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsLinks_CliqitRACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsLinks_RAA(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsLinks_RACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var termsAndConditionsLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
@@ -1711,6 +1729,7 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public func termsAndConditionsLinksNoPrivacyLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsLinksNoPrivacyLinks_CliqitRACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsLinksNoPrivacyLinks_RAA(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsLinksNoPrivacyLinks_RACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var termsAndConditionsLinksNoPrivacyLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
@@ -1722,10 +1741,16 @@ extension Foundation.LocalizedStringResource {
     public var termsAndConditionsLinksPartnerPrivacyPolicyLink_AANT: Foundation.LocalizedStringResource {
       get
     }
+    public var termsAndConditionsLinksPartnerPrivacyPolicyLink_CliqitRACV: Foundation.LocalizedStringResource {
+      get
+    }
     public var termsAndConditionsLinksPartnerPrivacyPolicyLink_RAA: Foundation.LocalizedStringResource {
       get
     }
     public var termsAndConditionsLinksPartnerPrivacyPolicyLink_RACV: Foundation.LocalizedStringResource {
+      get
+    }
+    public var termsAndConditionsLinksPartnerTermsAndConditionsLink_CliqitRACV: Foundation.LocalizedStringResource {
       get
     }
     public var termsAndConditionsLinksPartnerTermsAndConditionsLink_RAA: Foundation.LocalizedStringResource {
@@ -1770,6 +1795,7 @@ extension Foundation.LocalizedStringResource {
     }
     public func termsAndConditionsPrivacyPolicyLinks(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsPrivacyPolicyLinks_AANT(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func termsAndConditionsPrivacyPolicyLinks_CliqitRACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsPrivacyPolicyLinks_RAA(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func termsAndConditionsPrivacyPolicyLinks_RACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var termsAndConditionsPrivacyPolicyLinksHashtagSeparatedText0: Foundation.LocalizedStringResource {
@@ -1835,6 +1861,7 @@ extension Foundation.LocalizedStringResource {
     public var validationFlightNumberInvalid: Foundation.LocalizedStringResource {
       get
     }
+    public func validationInsufficientPointsBalance(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
     public var validationLastNameRequired: Foundation.LocalizedStringResource {
       get
     }
