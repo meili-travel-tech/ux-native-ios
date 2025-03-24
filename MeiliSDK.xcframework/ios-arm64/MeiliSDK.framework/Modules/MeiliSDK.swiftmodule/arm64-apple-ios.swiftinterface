@@ -122,6 +122,7 @@ public class BookingViewModel : Combine.ObservableObject {
 
 
 
+
 public enum MeiliEnvironment : Swift.String {
   case prod
   case preProd
@@ -148,6 +149,7 @@ public enum MeiliFlow : Swift.String {
     get
   }
 }
+public typealias EndBookingFlowHandler = (_ popToRoot: @escaping () -> Swift.Void) -> Swift.Void
 public struct MeiliParams {
   public var ptid: Swift.String
   public var flow: MeiliSDK.MeiliFlow
@@ -155,8 +157,9 @@ public struct MeiliParams {
   public var availParams: MeiliSDK.AvailParams?
   public var additionalParams: MeiliSDK.AdditionalParams?
   public var dismissAction: (() -> Swift.Void)?
+  public var onEndBookingFlow: MeiliSDK.EndBookingFlowHandler?
   public var colorScheme: SwiftUICore.ColorScheme?
-  public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil, colorScheme: SwiftUICore.ColorScheme? = nil)
+  public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil, onEndBookingFlow: MeiliSDK.EndBookingFlowHandler? = nil, colorScheme: SwiftUICore.ColorScheme? = nil)
 }
 @_Concurrency.MainActor @preconcurrency public struct MeiliView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public var meiliParams: MeiliSDK.MeiliParams
@@ -400,7 +403,13 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageDriverNationalIdLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageDriverNationalIdLabel_Localiza: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageDriverNationalIdLabel_Mitta: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageDriverPassportNumberLabel: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageErrorModalButtonLabel: Foundation.LocalizedStringResource {
@@ -504,6 +513,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramTitle_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramTitle_RACT: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageNextStepText: Foundation.LocalizedStringResource {
@@ -1159,6 +1171,7 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public func percentDiscountLabel(_ arg1: Swift.String, _ arg2: Swift.UInt) -> Foundation.LocalizedStringResource
+    public func percentDiscountLabel_RACT(_ arg1: Swift.String, _ arg2: Swift.UInt) -> Foundation.LocalizedStringResource
     public var percentDiscountOfferIconAlt: Foundation.LocalizedStringResource {
       get
     }
@@ -1184,6 +1197,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var radioButtonUnselectedA11yLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var redemptionTermsAndConditions: Foundation.LocalizedStringResource {
       get
     }
     public var rentalScreenTitle: Foundation.LocalizedStringResource {
@@ -1222,6 +1238,9 @@ extension Foundation.LocalizedStringResource {
     }
     public func resultMapDepotsShowAllCars(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
     public var resultMapFromPriceLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsCashOnlyPriceLabel: Foundation.LocalizedStringResource {
       get
     }
     public var resultsEmptyAllFilteredClearFiltersButton: Foundation.LocalizedStringResource {
@@ -1775,6 +1794,9 @@ extension Foundation.LocalizedStringResource {
     public var termsAndConditionsModalPromotionalTermsSectionTitle: Foundation.LocalizedStringResource {
       get
     }
+    public var termsAndConditionsModalRedemptionTermsSectionTitle_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
     public var termsAndConditionsModalSectionTitle_GENERAL: Foundation.LocalizedStringResource {
       get
     }
@@ -1877,13 +1899,25 @@ extension Foundation.LocalizedStringResource {
     public var validationNationalIdInvalid: Foundation.LocalizedStringResource {
       get
     }
+    public var validationNationalIdInvalid_Localiza: Foundation.LocalizedStringResource {
+      get
+    }
     public var validationNationalIdInvalid_Mitta: Foundation.LocalizedStringResource {
       get
     }
     public var validationNationalIdRequired: Foundation.LocalizedStringResource {
       get
     }
+    public var validationNationalIdRequired_Localiza: Foundation.LocalizedStringResource {
+      get
+    }
     public var validationNationalIdRequired_Mitta: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPassportNumberInvalid: Foundation.LocalizedStringResource {
+      get
+    }
+    public var validationPassportNumberRequired: Foundation.LocalizedStringResource {
       get
     }
     public var validationPaymentRequired: Foundation.LocalizedStringResource {
