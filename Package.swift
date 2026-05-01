@@ -17,8 +17,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
                       name: "MeiliSDK", 
-                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.5.1/MeiliSDK.xcframework.zip",
-                      checksum: "b6188a094c181cecdc68e6af11a1e358fc64d483f8c8bcd14898febee102475d"
+                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.6.3-alpha.1/MeiliSDK.xcframework.zip",
+                      checksum: "780193289fa4fdf6e59aebffc010c148452e88a947ac444400b26a002ff9f33b"
                      )
     ]
 )

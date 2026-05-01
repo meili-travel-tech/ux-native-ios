@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MeiliSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.4 effective-5.10 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MeiliSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
 import Combine
 import CoreGraphics
 import CoreLocation
@@ -19,6 +19,7 @@ import _Concurrency
 import _MapKit_SwiftUI
 import _StringProcessing
 import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
 import os.log
 import os
 
@@ -53,20 +54,30 @@ import os
 
 
 
+
+
 public protocol MeiliAnalyticsProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   func trackEvent(name: Swift.String, properties: [Swift.String : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func trackScreen(name: Swift.String, properties: [Swift.String : Any]?)
+  #endif
   func setUserProperties(_ properties: [Swift.String : Any])
   func setUserId(_ userId: Swift.String)
 }
 extension MeiliSDK.MeiliAnalyticsProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func trackScreen(name: Swift.String, properties: [Swift.String : Any]?)
+  #endif
   public func setUserProperties(_ properties: [Swift.String : Any])
   public func setUserId(_ userId: Swift.String)
 }
 
 public struct AvailParams : Swift.Encodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(pickupLocation: Swift.String? = nil, dropoffLocation: Swift.String? = nil, pickupDate: Swift.String? = nil, pickupTime: Swift.String? = nil, dropoffDate: Swift.String? = nil, dropoffTime: Swift.String? = nil, driverAge: Swift.Int? = nil, currencyCode: Swift.String? = nil, residency: Swift.String? = nil, pickupDateTime: Swift.String? = nil, dropoffDateTime: Swift.String? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
 }
 
@@ -85,25 +96,30 @@ public struct BookingInformation {
   public let bookingDate: Foundation.Date
   public init(bookingID: Swift.String, bookingDate: Foundation.Date)
 }
-public class BookingViewModel : Combine.ObservableObject {
-  @Combine.Published @_projectedValueProperty($bookingInfo) public var bookingInfo: MeiliSDK.BookingInformation? {
+@_Concurrency.MainActor public class BookingViewModel : Combine.ObservableObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @Combine.Published @_projectedValueProperty($bookingInfo) @_Concurrency.MainActor public var bookingInfo: MeiliSDK.BookingInformation? {
     get
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
     set
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
     _modify
   }
-  public var $bookingInfo: Combine.Published<MeiliSDK.BookingInformation?>.Publisher {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public var $bookingInfo: Combine.Published<MeiliSDK.BookingInformation?>.Publisher {
     get
     @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
     set
   }
-  public init(bookingInfo: MeiliSDK.BookingInformation? = nil)
-  public func completeBooking(bookingInfo: MeiliSDK.BookingInformation)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public init(bookingInfo: MeiliSDK.BookingInformation? = nil)
+  #endif
+  @_Concurrency.MainActor public func completeBooking(bookingInfo: MeiliSDK.BookingInformation)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
-
 
 
 
@@ -128,7 +144,9 @@ public enum MeiliEnvironment : Swift.String {
   case preProd
   case uat
   case dev
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -143,7 +161,9 @@ public enum MeiliFlow : Swift.String {
   case direct
   case connect
   case bookingManager
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -159,12 +179,16 @@ public struct MeiliParams {
   public var dismissAction: (() -> Swift.Void)?
   public var onEndBookingFlow: MeiliSDK.EndBookingFlowHandler?
   public var colorScheme: SwiftUICore.ColorScheme?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(ptid: Swift.String, flow: MeiliSDK.MeiliFlow = .direct, env: MeiliSDK.MeiliEnvironment = .dev, availParams: MeiliSDK.AvailParams? = nil, additionalParams: MeiliSDK.AdditionalParams? = nil, dismissAction: (() -> Swift.Void)? = nil, onEndBookingFlow: MeiliSDK.EndBookingFlowHandler? = nil, colorScheme: SwiftUICore.ColorScheme? = nil)
+  #endif
 }
 @_Concurrency.MainActor @preconcurrency public struct MeiliView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public var meiliParams: MeiliSDK.MeiliParams
   @_Concurrency.MainActor @preconcurrency public var bookingViewModel: MeiliSDK.BookingViewModel?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(with meiliParams: MeiliSDK.MeiliParams, bookingViewModel: MeiliSDK.BookingViewModel? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
@@ -204,8 +228,12 @@ public struct AdditionalParams {
   public var confirmationId: Swift.String
   public var prefillOnly: Swift.Bool?
   public var givenName: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(partnerLoyaltyAccount: Swift.String? = nil, partnerLoyaltyAccountTier: Swift.String? = nil, numberOfPassengers: Swift.Int? = nil, customerPartnerCode: Swift.String? = nil, flightNumber: Swift.String? = nil, passengerNameRecord: Swift.String? = nil, superPassengerNameRecord: Swift.String? = nil, infant: Swift.Int? = nil, child: Swift.Int? = nil, teenager: Swift.Int? = nil, supplierLoyaltyAccounts: [Swift.String]? = nil, fareTypeAndFlex: Swift.String? = nil, departureAirport: Swift.String? = nil, arrivalAirport: Swift.String? = nil, ancillaryActivity: Swift.String? = nil, airlineFareAmount: Swift.Double? = nil, airlineFareCurrency: Swift.String? = nil, partnerCustomerID: Swift.String? = nil, firstName: Swift.String? = nil, lastName: Swift.String = "", email: Swift.String? = nil, phoneNumbers: [Swift.Int]? = nil, companyName: Swift.String? = nil, corporateCode: Swift.String? = nil, addressLine1: Swift.String? = nil, postCode: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, confirmationId: Swift.String = "", prefillOnly: Swift.Bool? = nil, givenName: Swift.String? = nil)
+  #endif
 }
+
+
 
 
 
@@ -215,7 +243,9 @@ public struct AdditionalParams {
 @_hasMissingDesignatedInitializers public class MeiliAnalytics {
   public static let shared: MeiliSDK.MeiliAnalytics
   public func addProvider(_ provider: any MeiliSDK.MeiliAnalyticsProvider)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setUserInfo(userId: Swift.String?, properties: [Swift.String : Any]?)
+  #endif
   public func setUserId(_ userId: Swift.String)
   public func updateUserProperties(_ properties: [Swift.String : Any])
   @objc deinit
@@ -227,6 +257,9 @@ public struct AdditionalParams {
 @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
 extension Foundation.LocalizedStringResource {
   public struct Localizable {
+    public var ariaLabelAccessibilityPreferences: Foundation.LocalizedStringResource {
+      get
+    }
     public var ariaLabelBreadcrumbProgressBar: Foundation.LocalizedStringResource {
       get
     }
@@ -250,6 +283,9 @@ extension Foundation.LocalizedStringResource {
     }
     public func ariaLabelCountryFlag(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var ariaLabelDropOff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelEnablePromotionalPopups: Foundation.LocalizedStringResource {
       get
     }
     public var ariaLabelOptionsLoaded: Foundation.LocalizedStringResource {
@@ -283,6 +319,9 @@ extension Foundation.LocalizedStringResource {
     public var ariaLabelResultsLoading: Foundation.LocalizedStringResource {
       get
     }
+    public var ariaLabelShowLessAddOns: Foundation.LocalizedStringResource {
+      get
+    }
     public var ariaLabelShowMoreAddOns: Foundation.LocalizedStringResource {
       get
     }
@@ -292,10 +331,28 @@ extension Foundation.LocalizedStringResource {
     public var ariaLabelStartAgain: Foundation.LocalizedStringResource {
       get
     }
+    public var ariaLabelSwitchOff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var ariaLabelSwitchOn: Foundation.LocalizedStringResource {
+      get
+    }
     public var ariaLabelUpdateAddOns: Foundation.LocalizedStringResource {
       get
     }
     public var backToHomeButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookedVendorContactInfoHeading: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookedVendorContactRedemptionSupportLinkText_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookedVendorContactRedemptionSupportSubText_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var bookedVendorContactSupportSubText: Foundation.LocalizedStringResource {
       get
     }
     public var bookedVendorLinksHeading: Foundation.LocalizedStringResource {
@@ -352,6 +409,43 @@ extension Foundation.LocalizedStringResource {
     public var cancelBookingSuccessPageHeader: Foundation.LocalizedStringResource {
       get
     }
+    public var cancellationFeeUnitDays: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationFeeUnitHours: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationFeeUnitWeeks: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonCHEAPER_ELSEWHERE: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonDATES_DESTINATION_CHANGED: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonDUPLICATE_BOOKING: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonNONE_APPLY: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonNONE_SELECTED: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonPERSONAL_REASONS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonPLANS_CHANGED: Foundation.LocalizedStringResource {
+      get
+    }
+    public var cancellationReasonTRAVEL_RESTRICTIONS: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutInsufficientPointsBalance(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutInsufficientPointsSubText: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageBackButton: Foundation.LocalizedStringResource {
       get
     }
@@ -388,6 +482,9 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageDriverDetailsTitle: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageDriverFiscalCodeLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageDriverFlightDetailsLabel: Foundation.LocalizedStringResource {
       get
     }
@@ -421,7 +518,49 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageErrorModalMessage: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageErrorModalMessage_nationalId_Localiza: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageErrorModalMessage_partnerLoyaltyAccounts: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0105: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0106: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0107: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0108: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0109: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0110: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0111: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0112: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0113: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0114: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0115: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0116: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageErrorModalMessage_SE0118: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageErrorModalMessage_supplierLoyaltyAccounts: Foundation.LocalizedStringResource {
@@ -475,13 +614,28 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageLoyaltyProgramHeading_AlaskaAirlines: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageLoyaltyProgramHeading_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Emirates: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageLoyaltyProgramHeading_FrenchBee: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Frontier: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramHeading_Journify: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramHeading_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_LATAM_CL: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_LATAMBrazil: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramHeading_Lufthansa: Foundation.LocalizedStringResource {
@@ -505,20 +659,36 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageLoyaltyProgramHeading_SAS: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageLoyaltyProgramHeading_Swiss: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageLoyaltyProgramHeading_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramHeading_Turkish: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramHeading_UnitedAirlines: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageLoyaltyProgramHeading_Wizz: Foundation.LocalizedStringResource {
+      get
+    }
     public func checkoutPageLoyaltyProgramHeadingLoggedIn_SAS(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPageLoyaltyProgramHeadingLoggedIn_ScandicHotels(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var checkoutPageLoyaltyProgramTitle: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageLoyaltyProgramTitle_LATAM: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageLoyaltyProgramTitle_LATAMBrazil: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageLoyaltyProgramTitle_RACT: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageLoyaltyProgramTitle_SNCF: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageNextStepText: Foundation.LocalizedStringResource {
@@ -536,19 +706,43 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPagePartnerLoyaltyTierLabel_Accor: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_Aerlingus: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_AirBaltic: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_AirCanada: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_AirCaraibes: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_BritishAirways: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_CliqitRACV: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_DeltaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Emirates: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_Finnair: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_HRewards: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Iberia: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_ItaloTreno: Foundation.LocalizedStringResource {
@@ -560,10 +754,22 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPagePartnerLoyaltyTierLabel_LATAM: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_LATAM_CL: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_LATAMBrazil: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_LATAMBrazil_BR: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_Lufthansa: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_MalaysiaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_QatarAirways: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_RAA: Foundation.LocalizedStringResource {
@@ -575,16 +781,34 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPagePartnerLoyaltyTierLabel_RACT: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_RACV: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_RACWA: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_Renfe: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_Rotana: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_SAS: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPagePartnerLoyaltyTierLabel_ScandicHotels: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_SNCF: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Swiss: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPagePartnerLoyaltyTierLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPagePartnerLoyaltyTierLabel_Turkish: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePartnerLoyaltyTierLabel_UnitedAirlines: Foundation.LocalizedStringResource {
@@ -595,6 +819,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPagePaymentTitle_CCDETAILS: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSecondarySupplierLoyaltyLabel: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageSummaryBundleTitle: Foundation.LocalizedStringResource {
@@ -621,6 +848,9 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageSupplierLoyaltyTierLabel_Avis: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageSupplierLoyaltyTierLabel_Budget: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageSupplierLoyaltyTierLabel_Enterprise: Foundation.LocalizedStringResource {
       get
     }
@@ -628,6 +858,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageSupplierLoyaltyTierLabel_Hertz: Foundation.LocalizedStringResource {
+      get
+    }
+    public var checkoutPageSupplierLoyaltyTierLabel_Maggiore: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageSupplierLoyaltyTierLabel_National: Foundation.LocalizedStringResource {
@@ -646,9 +879,6 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageSupplierLoyaltyTierLabelEuropcar: Foundation.LocalizedStringResource {
-      get
-    }
-    public var checkoutPageSupplierLoyaltyTierLabelHertz: Foundation.LocalizedStringResource {
       get
     }
     public var checkoutPageSupplierLoyaltyTierLabelNational: Foundation.LocalizedStringResource {
@@ -673,17 +903,40 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPointsSliderLoginRequired_AmericanAirlines: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPointsSliderLoginRequired_BritishAirways: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPointsSliderLoginRequired_Lufthansa: Foundation.LocalizedStringResource {
       get
     }
     public func checkoutPointsSliderPointsLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderPointsLabel_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Austrian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Brussels(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderPointsLabel_DeltaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Emirates(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Frontier(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderPointsLabel_Lufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_QatarAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Swiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabel_Turkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderPointsLabel_UnitedAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var checkoutPointsSliderPointsLabelFrontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public func checkoutPointsSliderPointsLabelSwiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderPointsLabelTurkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderSubText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderSubText_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_Emirates(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_Frontier(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func checkoutPointsSliderSubText_Lufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_Swiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func checkoutPointsSliderSubText_Turkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var checkoutPointsSliderWarning: Foundation.LocalizedStringResource {
       get
     }
@@ -700,6 +953,15 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var confirmationBookingLoyaltyWarningRegularPart: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_SE0001: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_SE0002: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_SE0003: Foundation.LocalizedStringResource {
       get
     }
     public var confirmationBookingWarning_W001: Foundation.LocalizedStringResource {
@@ -721,6 +983,15 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var confirmationBookingWarning_W007: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W011: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W011_Avis: Foundation.LocalizedStringResource {
+      get
+    }
+    public var confirmationBookingWarning_W011_Budget: Foundation.LocalizedStringResource {
       get
     }
     public var confirmationGoBackToPartnerApp: Foundation.LocalizedStringResource {
@@ -806,6 +1077,9 @@ extension Foundation.LocalizedStringResource {
     public var crossSellEmergingLayerHeading_FrenchBee: Foundation.LocalizedStringResource {
       get
     }
+    public var crossSellEmergingLayerHeading_SAS: Foundation.LocalizedStringResource {
+      get
+    }
     public var crossSellEmergingLayerHeading_Travelstart: Foundation.LocalizedStringResource {
       get
     }
@@ -822,6 +1096,9 @@ extension Foundation.LocalizedStringResource {
     public var crossSellEmergingLayerSubText_FrenchBee: Foundation.LocalizedStringResource {
       get
     }
+    public var crossSellEmergingLayerSubText_SAS: Foundation.LocalizedStringResource {
+      get
+    }
     public var crossSellEmergingLayerSubText_Travelstart: Foundation.LocalizedStringResource {
       get
     }
@@ -829,6 +1106,12 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var crossSellEmergingLayerTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellFakeDoorBody: Foundation.LocalizedStringResource {
+      get
+    }
+    public var crossSellFakeDoorHeader: Foundation.LocalizedStringResource {
       get
     }
     public var crossSellMultiResultsHeader: Foundation.LocalizedStringResource {
@@ -866,6 +1149,9 @@ extension Foundation.LocalizedStringResource {
     public var crossSellPromoTitle: Foundation.LocalizedStringResource {
       get
     }
+    public var crossSellQuoteTitle: Foundation.LocalizedStringResource {
+      get
+    }
     public var crossSellSearchModalTitle: Foundation.LocalizedStringResource {
       get
     }
@@ -882,6 +1168,7 @@ extension Foundation.LocalizedStringResource {
     public var crossSellWidgetSeeMoreButtonNoTotal: Foundation.LocalizedStringResource {
       get
     }
+    public func crossSellWidgetSeeMoreButtonNoTotal_RACV(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var crossSellWidgetSeeMoreButtonPrevious: Foundation.LocalizedStringResource {
       get
     }
@@ -893,6 +1180,12 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var currencySelectorLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var depotMapOpenInAppleMaps: Foundation.LocalizedStringResource {
+      get
+    }
+    public var depotMapOpenInGoogleMaps: Foundation.LocalizedStringResource {
       get
     }
     public var driverAgeFieldA11yHint: Foundation.LocalizedStringResource {
@@ -907,12 +1200,17 @@ extension Foundation.LocalizedStringResource {
     public var driverDetailsLabelName: Foundation.LocalizedStringResource {
       get
     }
+    public var driverDetailsLabelPhone: Foundation.LocalizedStringResource {
+      get
+    }
     public var dropdownClearARIALabel: Foundation.LocalizedStringResource {
       get
     }
     public var dropdownToggleARIALabel: Foundation.LocalizedStringResource {
       get
     }
+    public func dualRateVendorTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func dualRateVendorTitle_AirCanada(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func durationPriceA11yLabel(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
     public var electric: Foundation.LocalizedStringResource {
       get
@@ -959,6 +1257,9 @@ extension Foundation.LocalizedStringResource {
     public var errorBoundaryMessageLink: Foundation.LocalizedStringResource {
       get
     }
+    public var errorCyberSourcePaymentFailed: Foundation.LocalizedStringResource {
+      get
+    }
     public var errorMessageHeader: Foundation.LocalizedStringResource {
       get
     }
@@ -990,6 +1291,21 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var evervaultSecurityCodeLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var feat_AA_Advantage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var feat_AA_Advantage_hover: Foundation.LocalizedStringResource {
+      get
+    }
+    public var feat_avios_pill: Foundation.LocalizedStringResource {
+      get
+    }
+    public var feat_avios_pill_description: Foundation.LocalizedStringResource {
+      get
+    }
+    public var featTestAI: Foundation.LocalizedStringResource {
       get
     }
     public func finalPriceA11yLabel(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
@@ -1050,6 +1366,9 @@ extension Foundation.LocalizedStringResource {
     public var locationDropDownSubheadingDistrict: Foundation.LocalizedStringResource {
       get
     }
+    public var locationDropDownSubheadingExternal: Foundation.LocalizedStringResource {
+      get
+    }
     public var locationDropDownSubheadingRailway: Foundation.LocalizedStringResource {
       get
     }
@@ -1058,12 +1377,26 @@ extension Foundation.LocalizedStringResource {
     }
     public func locationItemResultA11yHint(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Aerlingus_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_AlaskaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_AmericanAirlines_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Austrian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_BritishAirways_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Brussels(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_DeltaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_DeltaAirlines_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Emirates(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Frontier(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Frontier_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_ITAAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_Lufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_QatarAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_QatarAirways_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Swiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyBurnPoints_Turkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_UnitedAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyBurnPoints_UnitedAirlines_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var loyaltyBurnSelector_Cash: Foundation.LocalizedStringResource {
@@ -1072,36 +1405,116 @@ extension Foundation.LocalizedStringResource {
     public var loyaltyBurnSelector_Points: Foundation.LocalizedStringResource {
       get
     }
+    public var loyaltyBurnSelector_Points_Aerlingus: Foundation.LocalizedStringResource {
+      get
+    }
     public var loyaltyBurnSelector_Points_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_Austrian: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_BritishAirways: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_Brussels: Foundation.LocalizedStringResource {
       get
     }
     public var loyaltyBurnSelector_Points_DeltaAirlines: Foundation.LocalizedStringResource {
       get
     }
+    public var loyaltyBurnSelector_Points_Emirates: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_ITAAirways: Foundation.LocalizedStringResource {
+      get
+    }
     public var loyaltyBurnSelector_Points_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_QatarAirways: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_Swiss: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyBurnSelector_Points_Turkish: Foundation.LocalizedStringResource {
       get
     }
     public var loyaltyBurnSelector_Points_UnitedAirlines: Foundation.LocalizedStringResource {
       get
     }
+    public func loyaltyEarnMiles(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_Iberia(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_LATAM(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_LATAMBrazil(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnOtherPoints_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnOtherPoints_AirCanada(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnOtherPoints_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnOtherPoints_Iberia(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnOtherPoints_SAS(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Accor(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_AirCaraibes(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_AmericanAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Austrian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Brussels(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Emirates(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Ethiopian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Finnair(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Frontier(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_HReward(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Iberia(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_ITAAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_ItaloTreno(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
-    public func loyaltyEarnPoints_LATAM_miles(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
-    public func loyaltyEarnPoints_LATAM_points(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Lufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_QatarAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_Renfe(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPoints_SAS(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Swiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Turkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPoints_Wizz(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPointsAirCaraibes(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsAustrian(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsBrussels(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPointsDeltaAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsFrontier(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPointsLufthansa(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsSwiss(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsTurkish(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnPointsUnitedAirlines(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnPointsWizz(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var loyaltyProgramDisabledMessage_aeroplan_only: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramDisabledMessage_Enterprise: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsButton_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsButton_LATAMBrazil: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsModalTitle_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var loyaltyProgramsTermsModalTitle_LATAMBrazil: Foundation.LocalizedStringResource {
+      get
+    }
     public var manageMyBookingPageCancelButton: Foundation.LocalizedStringResource {
       get
     }
@@ -1118,6 +1531,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var manageMyBookingPageHeaderCancelledLink_RAA: Foundation.LocalizedStringResource {
+      get
+    }
+    public var marketingConsentLabel: Foundation.LocalizedStringResource {
       get
     }
     public var mileagePlanOptionPriceA11yLabel: Foundation.LocalizedStringResource {
@@ -1148,6 +1564,12 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public func optionsBundleUnlimitedText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var optionsExtrasAdditionalSubTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasAdditionalTitle: Foundation.LocalizedStringResource {
+      get
+    }
     public var optionsExtrasButtonAdd: Foundation.LocalizedStringResource {
       get
     }
@@ -1155,6 +1577,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var optionsExtrasMaxLimitMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsExtrasShowLessButton: Foundation.LocalizedStringResource {
       get
     }
     public var optionsExtrasShowMoreButton: Foundation.LocalizedStringResource {
@@ -1202,6 +1627,12 @@ extension Foundation.LocalizedStringResource {
     public var optionsPagePayLaterButtonLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var optionsPagePayLaterButtonLabel_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsPagePayLaterButtonLabel_LATAMBrazil: Foundation.LocalizedStringResource {
+      get
+    }
     public var optionsPagePayLaterButtonSubLabel: Foundation.LocalizedStringResource {
       get
     }
@@ -1220,7 +1651,68 @@ extension Foundation.LocalizedStringResource {
     public var optionsPageTitleProtectionAndExtras: Foundation.LocalizedStringResource {
       get
     }
+    public var optionsRedemptionBannerSubText: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsRedemptionBannerSubText_InsufficientBalance: Foundation.LocalizedStringResource {
+      get
+    }
+    public func optionsRedemptionBannerSubText_InsufficientBalanceMinPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var optionsRedemptionBannerSubText_NotLoggedIn: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsRedemptionBannerTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsRedemptionBannerTitle_InsufficientBalance: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsRedemptionBannerTitle_InsufficientBalanceMinPoints: Foundation.LocalizedStringResource {
+      get
+    }
+    public var optionsRedemptionBannerTitle_NotLoggedIn: Foundation.LocalizedStringResource {
+      get
+    }
     public var optionsScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCartaFreccia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCartaFreccia_Argento: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCartaFreccia_Oro: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCartaFreccia_Platino: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCartaFreccia_Platino_Infinito: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCarte_Avantage_Adulte: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCarte_Avantage_Jeune: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCarte_Avantage_Senior: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierCarte_Liberte: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierMax_Actif: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierMax_Actif_Plus: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierMax_Jeune: Foundation.LocalizedStringResource {
+      get
+    }
+    public var partnerLoyaltyAccountTierMax_Senior: Foundation.LocalizedStringResource {
       get
     }
     public var paymentLoading: Foundation.LocalizedStringResource {
@@ -1322,6 +1814,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public func resultsEmptyMessageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func resultsFilterBadge_passengerQuantity(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func resultsFilterBadge_priceRange(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func resultsFilterBadge_vehicleCategory(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var resultsFilterFeaturesTitle: Foundation.LocalizedStringResource {
       get
     }
@@ -1343,7 +1838,19 @@ extension Foundation.LocalizedStringResource {
     public var resultsFilterPaymentMethodTitle: Foundation.LocalizedStringResource {
       get
     }
+    public var resultsFilterPickupLocationTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterPickupTitle: Foundation.LocalizedStringResource {
+      get
+    }
     public var resultsFilterPointsRangeTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterPointsRangeTitle_Aerlingus: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsFilterPointsRangeTitle_BritishAirways: Foundation.LocalizedStringResource {
       get
     }
     public var resultsFilterPointsRangeTitle_Lufthansa: Foundation.LocalizedStringResource {
@@ -1413,14 +1920,42 @@ extension Foundation.LocalizedStringResource {
     public var resultsPageHeading: Foundation.LocalizedStringResource {
       get
     }
+    public var resultsPagePricePerDay: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsPagePricePerDayTotal: Foundation.LocalizedStringResource {
+      get
+    }
     public func resultsPageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsQuoteTermsAndConditions: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsQuoteTermsAndConditionsMeiliPrivacyPolicyLink: Foundation.LocalizedStringResource {
+      get
+    }
     public var resultsScreenTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSelectedQuoteButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSelectQuoteButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSelectQuoteButtonError: Foundation.LocalizedStringResource {
       get
     }
     public var resultsSelectVehicleButton: Foundation.LocalizedStringResource {
       get
     }
+    public var resultsSelectVehicleButton_RACV: Foundation.LocalizedStringResource {
+      get
+    }
     public var resultsShowFiltersButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public func resultsShowFiltersButtonWithCount(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var resultsShowOnMapButton: Foundation.LocalizedStringResource {
       get
     }
     public var resultsShowResultsButton: Foundation.LocalizedStringResource {
@@ -1430,6 +1965,12 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var resultsSortByEARN: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSortByEARN_LATAM: Foundation.LocalizedStringResource {
+      get
+    }
+    public var resultsSortByEARN_LATAMBrazil: Foundation.LocalizedStringResource {
       get
     }
     public var resultsSortByPRICE: Foundation.LocalizedStringResource {
@@ -1446,6 +1987,9 @@ extension Foundation.LocalizedStringResource {
     public var resultTopXMerchandisingRibbon: Foundation.LocalizedStringResource {
       get
     }
+    public var resultTopXMerchandisingRibbon_CliqitRACV: Foundation.LocalizedStringResource {
+      get
+    }
     public var resultTopXMerchandisingRibbon_RACV: Foundation.LocalizedStringResource {
       get
     }
@@ -1455,16 +1999,34 @@ extension Foundation.LocalizedStringResource {
     public var retrieveBookingEmailInputPlaceholder: Foundation.LocalizedStringResource {
       get
     }
+    public var retrieveBookingEmailTooltip: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingEmailTooltipAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var retrieveBookingGivenNameInputLabel: Foundation.LocalizedStringResource {
       get
     }
     public var retrieveBookingGivenNameInputPlaceholder: Foundation.LocalizedStringResource {
       get
     }
+    public var retrieveBookingGivenNameTooltip: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingGivenNameTooltipAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var retrieveBookingLastNameInputLabel: Foundation.LocalizedStringResource {
       get
     }
     public var retrieveBookingLastNameInputPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingLastNameTooltip: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingLastNameTooltipAriaLabel: Foundation.LocalizedStringResource {
       get
     }
     public var retrieveBookingNumberError: Foundation.LocalizedStringResource {
@@ -1482,6 +2044,12 @@ extension Foundation.LocalizedStringResource {
     public var retrieveBookingNumberInputPlaceholder: Foundation.LocalizedStringResource {
       get
     }
+    public var retrieveBookingNumberTooltip: Foundation.LocalizedStringResource {
+      get
+    }
+    public var retrieveBookingNumberTooltipAriaLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var retrieveBookingPageHeader: Foundation.LocalizedStringResource {
       get
     }
@@ -1490,6 +2058,48 @@ extension Foundation.LocalizedStringResource {
     }
     public func searchBarAgeErrorMax(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func searchBarAgeErrorMin(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var searchBarCashPointsMixedLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Aerlingus: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Austrian: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_BritishAirways: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Brussels: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Emirates: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Swiss: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabel_Turkish: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabelFrontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabelSwiss: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarCashPointsMixedLabelTurkish: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarDifferentLocationLabel: Foundation.LocalizedStringResource {
       get
     }
@@ -1507,6 +2117,9 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var searchBarEditButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarEditButton_RACV: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarEditLabel: Foundation.LocalizedStringResource {
@@ -1554,16 +2167,37 @@ extension Foundation.LocalizedStringResource {
     public var searchBarTicketNumberAddButton: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberAddButton_AlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButton_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButton_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButton_SNCF: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarTicketNumberAddButton_Trenitalia: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberAddButtonAlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarTicketNumberAddButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddButtonSouthwest: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberAddButtonTrenitalia: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberAddedLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddedLabel_AlaskaAirlines: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberAddedLabel_Trenitalia: Foundation.LocalizedStringResource {
@@ -1581,22 +2215,77 @@ extension Foundation.LocalizedStringResource {
     public var searchBarTicketNumberAddLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberAddLabel_AlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddLabel_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddLabel_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public func searchBarTicketNumberAddLabel_SNCF(_ arg1: Swift.UInt) -> Foundation.LocalizedStringResource
     public var searchBarTicketNumberAddLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberAddLabelAlaskaAirlines: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberConfirmButton: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberEditButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarTicketNumberLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabel_AlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabel_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLabel_Frontier: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberLabel_Trenitalia: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberLabelAlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarTicketNumberLabelTrenitalia: Foundation.LocalizedStringResource {
       get
     }
+    public var searchBarTicketNumberLoyaltyTierLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLoyaltyTierLabel_SNCF: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLoyaltyTierLabel_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLoyaltyTierPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLoyaltyTierPlaceholder_SNCF: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberLoyaltyTierPlaceholder_Trenitalia: Foundation.LocalizedStringResource {
+      get
+    }
     public var searchBarTicketNumberModalTitle: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitle_AlaskaAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitle_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberModalTitle_Frontier: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberModalTitle_Trenitalia: Foundation.LocalizedStringResource {
@@ -1606,6 +2295,15 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberPlaceholder: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholder_AmericanAirlines: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholder_Frontier: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchBarTicketNumberPlaceholder_SNCF: Foundation.LocalizedStringResource {
       get
     }
     public var searchBarTicketNumberPlaceholder_Trenitalia: Foundation.LocalizedStringResource {
@@ -1623,6 +2321,18 @@ extension Foundation.LocalizedStringResource {
     public func searchDateTimeMinWarning(_ arg1: Swift.String, _ arg2: Swift.String, _ arg3: Swift.String) -> Foundation.LocalizedStringResource
     public func searchDateTimeOneHourWarning(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
     public var searchLocationListInitialMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchPageErrorModalButtonLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchPageErrorModalMessage: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchPageErrorModalMessage_pastPickupDate: Foundation.LocalizedStringResource {
+      get
+    }
+    public var searchPageErrorModalTitle: Foundation.LocalizedStringResource {
       get
     }
     public var searchSummaryDriversAgeLabel: Foundation.LocalizedStringResource {
@@ -1646,6 +2356,7 @@ extension Foundation.LocalizedStringResource {
     public var showFiltersModalSubheading: Foundation.LocalizedStringResource {
       get
     }
+    public func showFiltersModalSubheadingWithCount(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var showFiltersModalTitle: Foundation.LocalizedStringResource {
       get
     }
@@ -1689,6 +2400,44 @@ extension Foundation.LocalizedStringResource {
     public var spinButtonLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var stepButton1: Foundation.LocalizedStringResource {
+      get
+    }
+    public var stepButton2: Foundation.LocalizedStringResource {
+      get
+    }
+    public var stepButton3: Foundation.LocalizedStringResource {
+      get
+    }
+    public var stepButton4: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFees24HourBookingGrace: Foundation.LocalizedStringResource {
+      get
+    }
+    public func summaryCancellationFeesAlways(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryCancellationFeesBefore(_ arg1: Swift.String, _ arg2: Swift.String, _ arg3: Swift.String, _ arg4: Swift.String, _ arg5: Swift.String, _ arg6: Swift.String, _ arg7: Swift.String) -> Foundation.LocalizedStringResource
+    public var summaryCancellationFeesBookingCancellationLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFeesInfoLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFeesIntro: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFeesLabel: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFeesNoRefundUnusedDays: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryCancellationFeesNoShow: Foundation.LocalizedStringResource {
+      get
+    }
+    public func summaryCancellationFeesTimeDescriptionBefore(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryCancellationFeesTimeDescriptionWithin(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func summaryCancellationFeesWithin(_ arg1: Swift.String, _ arg2: Swift.String, _ arg3: Swift.String, _ arg4: Swift.String, _ arg5: Swift.String, _ arg6: Swift.String, _ arg7: Swift.String) -> Foundation.LocalizedStringResource
     public var summaryPickUpDropOffHeading: Foundation.LocalizedStringResource {
       get
     }
@@ -1722,16 +2471,43 @@ extension Foundation.LocalizedStringResource {
     public var summaryTotalEarnLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalEarnLabel_Aerlingus: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel_BritishAirways: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel_Iberia: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabel_ITAAirways: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalEarnLabel_Lufthansa: Foundation.LocalizedStringResource {
       get
     }
     public var summaryTotalEarnLabel_Renfe: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalEarnLabel_Swis: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelEmirates: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelFrontier: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalEarnLabelLufthansa: Foundation.LocalizedStringResource {
       get
     }
     public var summaryTotalEarnLabelRenfe: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelSwiss: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalEarnLabelTurkish: Foundation.LocalizedStringResource {
       get
     }
     public func summaryTotalExchangeRateDisclaimerPostpay(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
@@ -1760,6 +2536,15 @@ extension Foundation.LocalizedStringResource {
     public var summaryTotalPaymentMethodLabel_LufthansaDutyTravel: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalPaymentMethodLabel_LufthansaDutyTravel_VOUCHER: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPaymentMethodLabel_MeiliAirlinesRed: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPaymentMethodLabel_MeiliAirlinesRed_CCDETAILS: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalPaymentMethodLabel_MeiliAirlinesTestPartner: Foundation.LocalizedStringResource {
       get
     }
@@ -1778,6 +2563,12 @@ extension Foundation.LocalizedStringResource {
     public var summaryTotalPriceAddOnsDisclaimer: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalPriceAddOnsDisclaimer_Avis: Foundation.LocalizedStringResource {
+      get
+    }
+    public var summaryTotalPriceAddOnsDisclaimer_Budget: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalPriceAddOnsDisclaimer_Localiza: Foundation.LocalizedStringResource {
       get
     }
@@ -1787,17 +2578,64 @@ extension Foundation.LocalizedStringResource {
     public var summaryTotalPriceFeeDisclaimer: Foundation.LocalizedStringResource {
       get
     }
+    public var summaryTotalPriceFeeDisclaimer_AirCanada: Foundation.LocalizedStringResource {
+      get
+    }
     public func summaryTotalProtectionAndExtrasLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var summaryTotalProtectionOptionLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalRentalPriceLabel: Foundation.LocalizedStringResource {
       get
     }
     public func summaryTotalSublineItemLabel(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var summaryTotalTaxesAndFeesLabel: Foundation.LocalizedStringResource {
+      get
+    }
     public var summaryTotalTaxesIncludedLabel: Foundation.LocalizedStringResource {
       get
     }
     public var summaryTotalTotalLabel: Foundation.LocalizedStringResource {
       get
     }
+    public var swapToCashWarningModalBodyInsufficientBalance: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalBodyInsufficientBalance_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public func swapToCashWarningModalBodyNoMinPoints(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public var swapToCashWarningModalBodyNoMinPoints_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalBodyNotLoggedIn: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalBodyNotLoggedIn_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalCloseButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalCloseButtonNotLoggedIn: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalCloseButtonNotLoggedIn_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalContinueButton: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalTitleInsufficientBalance: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalTitleNotLoggedIn: Foundation.LocalizedStringResource {
+      get
+    }
+    public var swapToCashWarningModalTitleNotLoggedIn_Lufthansa: Foundation.LocalizedStringResource {
+      get
+    }
+    public func termsAndConditionsEmbedOpenInNewTabLink(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var termsAndConditionsFailedMessage: Foundation.LocalizedStringResource {
       get
     }
@@ -1968,6 +2806,9 @@ extension Foundation.LocalizedStringResource {
     public var validationLastNameRequired: Foundation.LocalizedStringResource {
       get
     }
+    public var validationLatinCharsOnly: Foundation.LocalizedStringResource {
+      get
+    }
     public var validationLocationRequired: Foundation.LocalizedStringResource {
       get
     }
@@ -2113,6 +2954,12 @@ extension Foundation.LocalizedStringResource {
       get
     }
     public func vehicleSpecLabelBaggage(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageCombined(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageCombinedTooltip(_ arg1: Swift.String, _ arg2: Swift.String) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageLarge(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageLargeTooltip(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageSmall(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vehicleSpecLabelBaggageSmallTooltip(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
     public func vehicleSpecLabelDoorCount(_ arg1: Swift.Int) -> Foundation.LocalizedStringResource
     public var vehicleSpecLabelMileageOptions: Foundation.LocalizedStringResource {
       get
@@ -2140,6 +2987,8 @@ extension Foundation.LocalizedStringResource {
     public func vendorImageAltText(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func vendorSelectedMerchFeaturesModalTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func vendorSelectedTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vendorSelectedTitle_AirCanada(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func vendorSelectedTitle_booked_AirCanada(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func vendorTextSuppliedBy(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public var yourRentalScreenContinueButtonLabel: Foundation.LocalizedStringResource {
       get
@@ -2147,6 +2996,7 @@ extension Foundation.LocalizedStringResource {
   }
   public static let localizable: Foundation.LocalizedStringResource.Localizable
 }
+extension MeiliSDK.BookingViewModel : Swift.Sendable {}
 extension MeiliSDK.MeiliEnvironment : Swift.Equatable {}
 extension MeiliSDK.MeiliEnvironment : Swift.Hashable {}
 extension MeiliSDK.MeiliEnvironment : Swift.RawRepresentable {}
