@@ -10461,6 +10461,46 @@
               },
               {
                 "kind": "Var",
+                "name": "bookedVendorContactRedemptionSupportLinkText_Accor",
+                "printedName": "bookedVendorContactRedemptionSupportLinkText_Accor",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV50bookedVendorContactRedemptionSupportLinkText_AccorACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV50bookedVendorContactRedemptionSupportLinkText_AccorACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV50bookedVendorContactRedemptionSupportLinkText_AccorACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV50bookedVendorContactRedemptionSupportLinkText_AccorACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "bookedVendorContactRedemptionSupportLinkText_Lufthansa",
                 "printedName": "bookedVendorContactRedemptionSupportLinkText_Lufthansa",
                 "children": [
@@ -10494,6 +10534,46 @@
                     "declKind": "Accessor",
                     "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV54bookedVendorContactRedemptionSupportLinkText_LufthansaACvg",
                     "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV54bookedVendorContactRedemptionSupportLinkText_LufthansaACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "bookedVendorContactRedemptionSupportSubText_Accor",
+                "printedName": "bookedVendorContactRedemptionSupportSubText_Accor",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV49bookedVendorContactRedemptionSupportSubText_AccorACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV49bookedVendorContactRedemptionSupportSubText_AccorACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV49bookedVendorContactRedemptionSupportSubText_AccorACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV49bookedVendorContactRedemptionSupportSubText_AccorACvg",
                     "moduleName": "MeiliSDK",
                     "accessorKind": "get"
                   }
@@ -16741,6 +16821,46 @@
                 ]
               },
               {
+                "kind": "Var",
+                "name": "checkoutPagePartnerLoyaltyTierLabel_Vueling",
+                "printedName": "checkoutPagePartnerLoyaltyTierLabel_Vueling",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV43checkoutPagePartnerLoyaltyTierLabel_VuelingACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV43checkoutPagePartnerLoyaltyTierLabel_VuelingACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV43checkoutPagePartnerLoyaltyTierLabel_VuelingACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV43checkoutPagePartnerLoyaltyTierLabel_VuelingACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
                 "kind": "Function",
                 "name": "checkoutPagePaymentFailed",
                 "printedName": "checkoutPagePaymentFailed(_:)",
@@ -18454,6 +18574,33 @@
                 "funcSelfKind": "NonMutating"
               },
               {
+                "kind": "Function",
+                "name": "checkoutPointsSliderPointsLabel_Vueling",
+                "printedName": "checkoutPointsSliderPointsLabel_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV020checkoutPointsSliderI13Label_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV020checkoutPointsSliderI13Label_VuelingyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
                 "kind": "Var",
                 "name": "checkoutPointsSliderPointsLabelFrontier",
                 "printedName": "checkoutPointsSliderPointsLabelFrontier",
@@ -18784,6 +18931,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35checkoutPointsSliderSubText_TurkishyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35checkoutPointsSliderSubText_TurkishyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "checkoutPointsSliderSubText_Vueling",
+                "printedName": "checkoutPointsSliderSubText_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35checkoutPointsSliderSubText_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35checkoutPointsSliderSubText_VuelingyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -25490,6 +25664,60 @@
                 "funcSelfKind": "NonMutating"
               },
               {
+                "kind": "Function",
+                "name": "loyaltyBurnPoints_Vueling",
+                "printedName": "loyaltyBurnPoints_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyBurnPoints_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyBurnPoints_VuelingyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "loyaltyBurnPoints_Vueling_points",
+                "printedName": "loyaltyBurnPoints_Vueling_points(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV32loyaltyBurnPoints_Vueling_pointsyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV32loyaltyBurnPoints_Vueling_pointsyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
                 "kind": "Var",
                 "name": "loyaltyBurnSelector_Cash",
                 "printedName": "loyaltyBurnSelector_Cash",
@@ -26130,6 +26358,46 @@
                 ]
               },
               {
+                "kind": "Var",
+                "name": "loyaltyBurnSelector_Points_Vueling",
+                "printedName": "loyaltyBurnSelector_Points_Vueling",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34loyaltyBurnSelector_Points_VuelingACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34loyaltyBurnSelector_Points_VuelingACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34loyaltyBurnSelector_Points_VuelingACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34loyaltyBurnSelector_Points_VuelingACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
                 "kind": "Function",
                 "name": "loyaltyEarnMiles",
                 "printedName": "loyaltyEarnMiles(_:)",
@@ -26293,6 +26561,33 @@
               },
               {
                 "kind": "Function",
+                "name": "loyaltyEarnMiles_Vueling",
+                "printedName": "loyaltyEarnMiles_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV24loyaltyEarnMiles_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV24loyaltyEarnMiles_VuelingyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
                 "name": "loyaltyEarnOtherPoints_Aerlingus",
                 "printedName": "loyaltyEarnOtherPoints_Aerlingus(_:)",
                 "children": [
@@ -26420,6 +26715,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26loyaltyEarnOtherPoints_SASyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26loyaltyEarnOtherPoints_SASyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "loyaltyEarnOtherPoints_Vueling",
+                "printedName": "loyaltyEarnOtherPoints_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV30loyaltyEarnOtherPoints_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV30loyaltyEarnOtherPoints_VuelingyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -27014,6 +27336,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyEarnPoints_TurkishyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyEarnPoints_TurkishyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "loyaltyEarnPoints_Vueling",
+                "printedName": "loyaltyEarnPoints_Vueling(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyEarnPoints_VuelingyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV25loyaltyEarnPoints_VuelingyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -31829,6 +32178,114 @@
               },
               {
                 "kind": "Function",
+                "name": "resultsFilterBadge_fuelPolicy",
+                "printedName": "resultsFilterBadge_fuelPolicy(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_fuelPolicyyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_fuelPolicyyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_fuelType",
+                "printedName": "resultsFilterBadge_fuelType(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_fuelTypeyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_fuelTypeyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_merchFeatures",
+                "printedName": "resultsFilterBadge_merchFeatures(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV32resultsFilterBadge_merchFeaturesyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV32resultsFilterBadge_merchFeaturesyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_mileage",
+                "printedName": "resultsFilterBadge_mileage(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26resultsFilterBadge_mileageyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26resultsFilterBadge_mileageyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
                 "name": "resultsFilterBadge_passengerQuantity",
                 "printedName": "resultsFilterBadge_passengerQuantity(_:)",
                 "children": [
@@ -31848,6 +32305,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36resultsFilterBadge_passengerQuantityyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36resultsFilterBadge_passengerQuantityyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_pickupType",
+                "printedName": "resultsFilterBadge_pickupType(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_pickupTypeyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_pickupTypeyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -31883,6 +32367,33 @@
               },
               {
                 "kind": "Function",
+                "name": "resultsFilterBadge_transmissionType",
+                "printedName": "resultsFilterBadge_transmissionType(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35resultsFilterBadge_transmissionTypeyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV35resultsFilterBadge_transmissionTypeyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
                 "name": "resultsFilterBadge_vehicleCategory",
                 "printedName": "resultsFilterBadge_vehicleCategory(_:)",
                 "children": [
@@ -31902,6 +32413,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34resultsFilterBadge_vehicleCategoryyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV34resultsFilterBadge_vehicleCategoryyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_vendorName",
+                "printedName": "resultsFilterBadge_vendorName(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_vendorNameyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29resultsFilterBadge_vendorNameyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -32423,6 +32961,46 @@
                     "declKind": "Accessor",
                     "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV39resultsFilterPointsRangeTitle_LufthansaACvg",
                     "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV39resultsFilterPointsRangeTitle_LufthansaACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "resultsFilterPointsRangeTitle_Vueling",
+                "printedName": "resultsFilterPointsRangeTitle_Vueling",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37resultsFilterPointsRangeTitle_VuelingACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37resultsFilterPointsRangeTitle_VuelingACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37resultsFilterPointsRangeTitle_VuelingACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37resultsFilterPointsRangeTitle_VuelingACvg",
                     "moduleName": "MeiliSDK",
                     "accessorKind": "get"
                   }
@@ -35699,6 +36277,46 @@
                     "declKind": "Accessor",
                     "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_TurkishACvg",
                     "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_TurkishACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "searchBarCashPointsMixedLabel_Vueling",
+                "printedName": "searchBarCashPointsMixedLabel_Vueling",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_VuelingACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_VuelingACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_VuelingACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV37searchBarCashPointsMixedLabel_VuelingACvg",
                     "moduleName": "MeiliSDK",
                     "accessorKind": "get"
                   }
@@ -41310,6 +41928,46 @@
                     "declKind": "Accessor",
                     "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26summaryTotalEarnLabel_SwisACvg",
                     "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV26summaryTotalEarnLabel_SwisACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "summaryTotalEarnLabel_Vueling",
+                "printedName": "summaryTotalEarnLabel_Vueling",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29summaryTotalEarnLabel_VuelingACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29summaryTotalEarnLabel_VuelingACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29summaryTotalEarnLabel_VuelingACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV29summaryTotalEarnLabel_VuelingACvg",
                     "moduleName": "MeiliSDK",
                     "accessorKind": "get"
                   }
