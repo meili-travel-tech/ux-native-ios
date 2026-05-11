@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                           = 'MeiliSDK'
-  s.version = '1.6.3-alpha.4'
+  s.version = '1.6.3-alpha.5'
   s.summary                        = 'Use Meili Platform'
   s.license                        = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage                       = 'https://meili.travel/'
