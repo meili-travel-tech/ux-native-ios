@@ -2605,6 +2605,16 @@
       },
       {
         "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "MeiliSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUIPager",
         "printedName": "SwiftUIPager",
         "declKind": "Import",
@@ -13448,6 +13458,46 @@
               },
               {
                 "kind": "Var",
+                "name": "checkoutPageErrorModalMessage_SE0119",
+                "printedName": "checkoutPageErrorModalMessage_SE0119",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36checkoutPageErrorModalMessage_SE0119ACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36checkoutPageErrorModalMessage_SE0119ACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36checkoutPageErrorModalMessage_SE0119ACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV36checkoutPageErrorModalMessage_SE0119ACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "checkoutPageErrorModalMessage_supplierLoyaltyAccounts",
                 "printedName": "checkoutPageErrorModalMessage_supplierLoyaltyAccounts",
                 "children": [
@@ -22463,6 +22513,86 @@
               },
               {
                 "kind": "Var",
+                "name": "depotMapViewDropoff",
+                "printedName": "depotMapViewDropoff",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV19depotMapViewDropoffACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV19depotMapViewDropoffACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV19depotMapViewDropoffACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV19depotMapViewDropoffACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "depotMapViewPickup",
+                "printedName": "depotMapViewPickup",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV18depotMapViewPickupACvp",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV18depotMapViewPickupACvp",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocalizedStringResource",
+                        "printedName": "Foundation.LocalizedStringResource",
+                        "usr": "s:10Foundation23LocalizedStringResourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV18depotMapViewPickupACvg",
+                    "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV18depotMapViewPickupACvg",
+                    "moduleName": "MeiliSDK",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "driverAgeFieldA11yHint",
                 "printedName": "driverAgeFieldA11yHint",
                 "children": [
@@ -26472,6 +26602,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV31loyaltyEarnMiles_BritishAirwaysyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV31loyaltyEarnMiles_BritishAirwaysyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "loyaltyEarnMiles_HeyMax",
+                "printedName": "loyaltyEarnMiles_HeyMax(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV23loyaltyEarnMiles_HeyMaxyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV23loyaltyEarnMiles_HeyMaxyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -32224,6 +32381,33 @@
                 "declKind": "Func",
                 "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_fuelTypeyACSSF",
                 "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_fuelTypeyACSSF",
+                "moduleName": "MeiliSDK",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "resultsFilterBadge_location",
+                "printedName": "resultsFilterBadge_location(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocalizedStringResource",
+                    "printedName": "Foundation.LocalizedStringResource",
+                    "usr": "s:10Foundation23LocalizedStringResourceV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_locationyACSSF",
+                "mangledName": "$s10Foundation23LocalizedStringResourceV8MeiliSDKE11LocalizableV27resultsFilterBadge_locationyACSSF",
                 "moduleName": "MeiliSDK",
                 "declAttributes": [
                   "AccessControl"
@@ -49951,28 +50135,28 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/MerchandiseFeaturesView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3216,
+      "offset": 3256,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/MerchandiseFeaturesView.swift",
       "kind": "StringLiteral",
-      "offset": 4473,
+      "offset": 4513,
       "length": 4,
       "value": "\"FC\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/MerchandiseFeaturesView.swift",
       "kind": "StringLiteral",
-      "offset": 4492,
+      "offset": 4532,
       "length": 4,
       "value": "\"TF\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/MerchandiseFeaturesView.swift",
       "kind": "StringLiteral",
-      "offset": 4515,
+      "offset": 4555,
       "length": 8,
       "value": "\"POINTS\""
     },
@@ -50336,7 +50520,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/DriverDetailsFormView.swift",
       "kind": "BooleanLiteral",
-      "offset": 11484,
+      "offset": 11528,
       "length": 5,
       "value": "false"
     },
@@ -51267,7 +51451,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/InPathCarResultCardView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9973,
+      "offset": 9985,
       "length": 4,
       "value": "true"
     },
@@ -51841,7 +52025,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/LocationListScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 4503,
+      "offset": 4363,
       "length": 5,
       "value": "false"
     },
@@ -51869,14 +52053,14 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/ImportantInfoContentsView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7978,
+      "offset": 8050,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/ImportantInfoContentsView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7996,
+      "offset": 8068,
       "length": 4,
       "value": "true"
     },
@@ -54144,7 +54328,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/CarResultCardView.swift",
       "kind": "BooleanLiteral",
-      "offset": 11786,
+      "offset": 11798,
       "length": 4,
       "value": "true"
     },
@@ -54235,28 +54419,28 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 12295,
+      "offset": 12423,
       "length": 15,
       "value": "\"Loading state\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 12541,
+      "offset": 12669,
       "length": 18,
       "value": "\"With Reservation\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 12750,
+      "offset": 12878,
       "length": 20,
       "value": "\"Booking flow ended\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Screens\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 12876,
+      "offset": 13004,
       "length": 9,
       "value": "\"Dismiss\""
     },
@@ -54270,7 +54454,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/TicketOrLoyaltyNumberView.swift",
       "kind": "StringLiteral",
-      "offset": 4212,
+      "offset": 4787,
       "length": 2,
       "value": "\"\""
     },
@@ -54438,7 +54622,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/SearchBarView.swift",
       "kind": "StringLiteral",
-      "offset": 2054,
+      "offset": 2941,
       "length": 6,
       "value": "\"Test\""
     },
@@ -54683,7 +54867,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliUI\/Views\/SearchPanelView.swift",
       "kind": "StringLiteral",
-      "offset": 13809,
+      "offset": 13961,
       "length": 9,
       "value": "\"Ireland\""
     },
@@ -55614,7 +55798,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ux-native-ios-sdk\/ux-native-ios-sdk\/MeiliSDK\/MeiliView.swift",
       "kind": "StringLiteral",
-      "offset": 7189,
+      "offset": 7233,
       "length": 8,
       "value": "\"100.10\""
     },

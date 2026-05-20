@@ -569,6 +569,9 @@ extension Foundation.LocalizedStringResource {
     public var checkoutPageErrorModalMessage_SE0118: Foundation.LocalizedStringResource {
       get
     }
+    public var checkoutPageErrorModalMessage_SE0119: Foundation.LocalizedStringResource {
+      get
+    }
     public var checkoutPageErrorModalMessage_supplierLoyaltyAccounts: Foundation.LocalizedStringResource {
       get
     }
@@ -1199,6 +1202,12 @@ extension Foundation.LocalizedStringResource {
     public var depotMapOpenInGoogleMaps: Foundation.LocalizedStringResource {
       get
     }
+    public var depotMapViewDropoff: Foundation.LocalizedStringResource {
+      get
+    }
+    public var depotMapViewPickup: Foundation.LocalizedStringResource {
+      get
+    }
     public var driverAgeFieldA11yHint: Foundation.LocalizedStringResource {
       get
     }
@@ -1466,6 +1475,7 @@ extension Foundation.LocalizedStringResource {
     public func loyaltyEarnMiles(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnMiles_Aerlingus(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnMiles_BritishAirways(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func loyaltyEarnMiles_HeyMax(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnMiles_Iberia(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnMiles_LATAM(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func loyaltyEarnMiles_LATAMBrazil(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
@@ -1835,6 +1845,7 @@ extension Foundation.LocalizedStringResource {
     public func resultsEmptyMessageTitle(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func resultsFilterBadge_fuelPolicy(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func resultsFilterBadge_fuelType(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
+    public func resultsFilterBadge_location(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func resultsFilterBadge_merchFeatures(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func resultsFilterBadge_mileage(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
     public func resultsFilterBadge_passengerQuantity(_ arg1: Swift.String) -> Foundation.LocalizedStringResource
