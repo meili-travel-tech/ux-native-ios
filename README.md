@@ -55,7 +55,7 @@ target 'YourApp' do
 end
 ```
 
-Both channels deliver the same compiled XCFramework — the only difference is the integration mechanism. SwiftPM is the canonical channel going forward.
+Both channels are first-class and deliver the same compiled XCFramework — the only difference is the integration mechanism. Pick whichever matches your build system.
 
 ## Usage
 
