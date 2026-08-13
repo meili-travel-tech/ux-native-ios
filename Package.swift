@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "MeiliSDK",
-    platforms: [.iOS(.v16)],
+    platforms: [.iOS("15.0")],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -17,8 +17,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
                       name: "MeiliSDK", 
-                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.8.0/MeiliSDK.xcframework.zip",
-                      checksum: "6be41c93963693c6e2d86788b3972ed977c8bbd3b0b4bcf5195d5f9b8b4b446a"
+                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.9.0/MeiliSDK.xcframework.zip",
+                      checksum: "d08817bfacf0c16a8619b974557dea4e93416373b8ee65c267b4900b93894d1a"
                      )
     ]
 )
