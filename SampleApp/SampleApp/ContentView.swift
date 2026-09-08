@@ -5,7 +5,7 @@
 //  Created by Henrique Marques on 10/02/2024.
 //
 
-import MeiliSDK
+import MeiliCarSDK
 import SwiftUI
 
 let PTID = "131.17"
@@ -20,20 +20,20 @@ struct ContentView: View {
     }
 
     var body: some View {
-//        MeiliView(with: MeiliParams(ptid: "100.9", currentFlow: .results, env: .prod, availParams: AvailParams(pickupLocation: "BCN", dropoffLocation: "MAD", pickupDateTime: "2024-06-19T14:38:34.301Z", dropoffDateTime: "2024-06-28T14:38:34.301Z", driverAge: 30, currencyCode: "EUR", residency: "IE")))
+//        MeiliCarView(with: MeiliCarParams(ptid: "100.9", currentFlow: .results, env: .prod, availParams: AvailParams(pickupLocation: "BCN", dropoffLocation: "MAD", pickupDateTime: "2024-06-19T14:38:34.301Z", dropoffDateTime: "2024-06-28T14:38:34.301Z", driverAge: 30, currencyCode: "EUR", residency: "IE")))
 
-//        MeiliView(with: MeiliParams(ptid: "100.9"))
+//        MeiliCarView(with: MeiliCarParams(ptid: "100.9"))
 
         TabView(selection: $selectedTab) {
             NavigationStack {
                 VStack {
                     HomeView(isPresentingCarRental: $isPresentingCarRentalView)
                     
-                    MeiliView(with: MeiliParams(ptid: PTID))
+                    MeiliCarView(with: MeiliCarParams(ptid: PTID))
                 }
                 .navigationBarTitle("Home")
                 .navigationDestination(isPresented: $isPresentingCarRentalView, destination: {
-                    MeiliView(with: MeiliParams(ptid: PTID))
+                    MeiliCarView(with: MeiliCarParams(ptid: PTID))
                 })
             }
 
@@ -99,7 +99,7 @@ struct HomeView: View {
 
 struct CarRentalView: View {
     var body: some View {
-        MeiliView(with: MeiliParams(ptid: PTID, env: .dev))
+        MeiliCarView(with: MeiliCarParams(ptid: PTID, env: .dev))
     }
 }
 

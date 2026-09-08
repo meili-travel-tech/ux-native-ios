@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1079B4512BC9478A0086EBE8 /* MeiliSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1079B4502BC9478A0086EBE8 /* MeiliSDK */; };
+		1079B4512BC9478A0086EBE8 /* MeiliCarSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1079B4502BC9478A0086EBE8 /* MeiliCarSDK */; };
 		109226AA2BA344B60081D588 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 109226A42BA344B60081D588 /* NunitoSans-SemiBold.ttf */; };
 		109226AB2BA344B60081D588 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 109226A52BA344B60081D588 /* NunitoSans-Light.ttf */; };
 		109226AC2BA344B60081D588 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 109226A62BA344B60081D588 /* Roboto-Regular.ttf */; };
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1079B4512BC9478A0086EBE8 /* MeiliSDK in Frameworks */,
+				1079B4512BC9478A0086EBE8 /* MeiliCarSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			);
 			name = SampleApp;
 			packageProductDependencies = (
-				1079B4502BC9478A0086EBE8 /* MeiliSDK */,
+				1079B4502BC9478A0086EBE8 /* MeiliCarSDK */,
 			);
 			productName = SampleApp;
 			productReference = 10A7E60F2B77B4030056699E /* SampleApp.app */;
@@ -458,16 +458,16 @@
 			repositoryURL = "https://github.com/meili-travel-tech/ux-native-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.27;
+				minimumVersion = 1.12.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1079B4502BC9478A0086EBE8 /* MeiliSDK */ = {
+		1079B4502BC9478A0086EBE8 /* MeiliCarSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1079B44F2BC9478A0086EBE8 /* XCRemoteSwiftPackageReference "ux-native-ios" */;
-			productName = MeiliSDK;
+			productName = MeiliCarSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
