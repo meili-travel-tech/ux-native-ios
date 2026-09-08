@@ -91,7 +91,7 @@ web equivalent, or shows a "requires a newer iOS" message where there's no web e
 `MeiliCarSupport.isNativeFunnelAvailable` if you'd rather route somewhere of your own, or hide your
 entry point entirely, on iOS 15.
 
-A headless, stateless [Query API](https://github.com/meili-travel-tech/ux-native-ios-sdk/blob/main/docs/query-api-contract.md)
+A headless, stateless [Query API](https://docs.meili.travel/native/ios/query-api)
 (`MeiliCarQueryClient`) is fully functional on iOS 15, for building your own availability carousel
 ahead of a deeplink into the funnel.
 
@@ -104,7 +104,7 @@ This SDK shipped as **`MeiliSDK`** through version `1.11.1`. As of `1.12.0` it s
 future second Meili product (e.g. hotels) can never collide with it. The `MeiliSDK` product and pod
 **stay published and frozen at `1.11.1`**: existing `from:`/`upToNextMajor` pins keep resolving, and
 you can roll back to it at any time. New releases publish only under the `MeiliCarSDK` name. See the
-[MeiliCarSDK changelog](https://github.com/meili-travel-tech/ux-native-ios-sdk/blob/main/CHANGELOG.md)
+[MeiliCarSDK changelog](https://github.com/meili-travel-tech/ux-native-ios/releases)
 for the full symbol rename table.
 
 ## Privacy
