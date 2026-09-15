@@ -23,7 +23,7 @@ let package = Package(
         .binaryTarget(
                       name: "MeiliCarSDK",
                       url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.12.0/MeiliCarSDK.xcframework.zip",
-                      checksum: "59e16eb4b0b67d57d77e21c26279ecc6cc3fb9601c89675127e40e96a61de947"
+                      checksum: "2b984add1a85deff3bb3949735faf0e8b8a98c43e13eaac6aadf4bbeeb8e9287"
                      ),
         // Frozen at 1.11.1 — do not update this target's url/checksum. New releases publish a new
         // MeiliCarSDK target above; this one stays pinned so old consumers keep resolving.
