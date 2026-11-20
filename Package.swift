@@ -22,8 +22,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
                       name: "MeiliCarSDK",
-                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.15.0/MeiliCarSDK.xcframework.zip",
-                      checksum: "a103c72b6fb6912b43faa82126281d0e90dc8ee00fbb8cb6052957046275ca73"
+                      url: "https://github.com/meili-travel-tech/ux-native-ios/releases/download/1.16.0/MeiliCarSDK.xcframework.zip",
+                      checksum: "096202cfa4de7ba868bc2b5012703e06e61b980d65b39b9e130a25db27cf355d"
                      ),
         // Frozen at 1.11.1 — do not update this target's url/checksum. New releases publish a new
         // MeiliCarSDK target above; this one stays pinned so old consumers keep resolving.
